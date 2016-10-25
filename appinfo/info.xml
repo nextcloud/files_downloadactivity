@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<info>
+	<id>files_downloadactivity</id>
+	<name>Activities for shared file downloads</name>
+	<description>Creates activities for downloads of shared files</description>
+	<licence>AGPL</licence>
+	<author>Joas Schilling</author>
+	<version>1.0.0</version>
+	<namespace>FilesDownloadActivity</namespace>
+
+	<category>other</category>
+
+	<types>
+		<filesystem/>
+	</types>
+
+	<dependencies>
+		<owncloud min-version="9.2" max-version="9.2" />
+	</dependencies>
+</info>
