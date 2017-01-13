@@ -2,12 +2,13 @@
 <info>
 	<id>files_downloadactivity</id>
 	<name>Activities for shared file downloads</name>
-	<description>Creates activities for downloads of shared files</description>
+	<description>Creates activities for downloads of files that were shared with other users or a group</description>
 	<licence>AGPL</licence>
 	<author>Joas Schilling</author>
 
 	<category>files</category>
 	<category>monitoring</category>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/files_downloadactivity/master/docs/screenshot.png</screenshot>
 
 	<website>https://github.com/nextcloud/files_downloadactivity</website>
 	<bugs>https://github.com/nextcloud/files_downloadactivity/issues</bugs>
