@@ -23,4 +23,14 @@
 	<dependencies>
 		<nextcloud min-version="12" max-version="12" />
 	</dependencies>
+
+	<activity>
+		<settings>
+			<setting>OCA\FilesDownloadActivity\Activity\Setting</setting>
+		</settings>
+
+		<providers>
+			<provider>OCA\FilesDownloadActivity\Activity\Provider</provider>
+		</providers>
+	</activity>
 </info>

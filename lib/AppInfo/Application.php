@@ -21,16 +21,11 @@
 
 namespace OCA\FilesDownloadActivity\AppInfo;
 
-use OCA\FilesDownloadActivity\Activity\Extension;
 use OCA\FilesDownloadActivity\Activity\Listener;
+use OCP\AppFramework\App;
 use OCP\Util;
 
-class Application extends \OCP\AppFramework\App {
-
-	/** @var string */
-	protected $identifier;
-	/** @var string|null */
-	protected $sessionUser;
+class Application extends App {
 
 	public function __construct() {
 		parent::__construct('files_downloadactivity');
@@ -41,10 +36,6 @@ class Application extends \OCP\AppFramework\App {
 	 */
 	public function register() {
 		Util::connectHook('OC_Filesystem', 'read', $this, 'listenReadFile');
-
-		$this->getContainer()->getServer()->getActivityManager()->registerExtension(function() {
-			return $this->getContainer()->query(Extension::class);
-		});
 	}
 
 	/**
