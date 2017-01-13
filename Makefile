@@ -21,19 +21,8 @@ create-tag:
 
 clean:
 	rm -rf $(build_dir)
-	rm -rf node_modules
 
-install-deps: install-npm-deps
-
-install-npm-deps:
-	npm install --production
-
-install-npm-deps-dev:
-	npm install --deps
-
-dev-setup: install-npm-deps-dev
-
-appstore: clean install-deps
+appstore: clean
 	mkdir -p $(sign_dir)
 	rsync -a \
 	--exclude=/build \
