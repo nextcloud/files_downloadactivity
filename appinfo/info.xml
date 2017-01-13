@@ -5,16 +5,22 @@
 	<description>Creates activities for downloads of shared files</description>
 	<licence>AGPL</licence>
 	<author>Joas Schilling</author>
+
+	<category>files</category>
+	<category>monitoring</category>
+
+	<website>https://github.com/nextcloud/files_downloadactivity</website>
+	<bugs>https://github.com/nextcloud/files_downloadactivity/issues</bugs>
+	<repository>https://github.com/nextcloud/files_downloadactivity</repository>
+
 	<version>1.0.0</version>
 	<namespace>FilesDownloadActivity</namespace>
-
-	<category>other</category>
 
 	<types>
 		<filesystem/>
 	</types>
 
 	<dependencies>
-		<owncloud min-version="9.2" max-version="9.2" />
+		<nextcloud min-version="12" max-version="12" />
 	</dependencies>
 </info>
