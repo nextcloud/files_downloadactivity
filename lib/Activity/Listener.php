@@ -109,16 +109,26 @@ class Listener {
 			];
 		}
 
-		$event = $this->activityManager->generateEvent();
-		$event->setApp('files_downloadactivity')
-			->setType(Extension::TYPE_SHARE_DOWNLOADED)
-			->setAffectedUser($owner)
-			->setAuthor($this->currentUser->getUID())
-			->setTimestamp(time())
-			->setSubject($subject, $subjectParams)
-			->setObject('files', $fileId, $filePath)
-			->setLink($this->urlGenerator->linkToRouteAbsolute('files.view.index', $linkData));
-		$this->activityManager->publish($event);
+		try {
+			$event = $this->activityManager->generateEvent();
+			$event->setApp('files_downloadactivity')
+				->setType('file_downloaded')
+				->setAffectedUser($owner)
+				->setAuthor($this->currentUser->getUID())
+				->setTimestamp(time())
+				->setSubject($subject, $subjectParams)
+				->setObject('files', $fileId, $filePath)
+				->setLink($this->urlGenerator->linkToRouteAbsolute('files.view.index', $linkData));
+			$this->activityManager->publish($event);
+		} catch (\InvalidArgumentException $e) {
+			$this->logger->logException($e, [
+				'app' => 'files_downloadactivity',
+			]);
+		} catch (\BadMethodCallException $e) {
+			$this->logger->logException($e, [
+				'app' => 'files_downloadactivity',
+			]);
+		}
 	}
 
 	/**
