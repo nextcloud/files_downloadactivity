@@ -95,12 +95,12 @@ class Listener {
 		$subjectParams = [[$fileId => $filePath], $this->currentUser->getUserIdentifier(), $client];
 
 		if ($isDir) {
-			$subject = Extension::SUBJECT_SHARED_FOLDER_DOWNLOADED;
+			$subject = Provider::SUBJECT_SHARED_FOLDER_DOWNLOADED;
 			$linkData = [
 				'dir' => $filePath,
 			];
 		} else {
-			$subject = Extension::SUBJECT_SHARED_FILE_DOWNLOADED;
+			$subject = Provider::SUBJECT_SHARED_FILE_DOWNLOADED;
 			$parentDir = (substr_count($filePath, '/') === 1) ? '/' : dirname($filePath);
 			$fileName = basename($filePath);
 			$linkData = [
