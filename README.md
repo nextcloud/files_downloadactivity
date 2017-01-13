@@ -1,9 +1,7 @@
 # Activities for shared file downloads
 
-Creates activities for downloads of shared files
+Creates activities for downloads of files that were shared with other users or a group
 
-## QA metrics on master branch:
+![Shared file was downloaded by user via the web interface](docs/screenshot.png)
 
-[![Build Status](https://travis-ci.org/nextcloud/files_downloadactivity.svg?branch=master)](https://travis-ci.org/nextcloud/files_downloadactivity)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nextcloud/files_downloadactivity/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/nextcloud/files_downloadactivity/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/nextcloud/files_downloadactivity/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/nextcloud/files_downloadactivity/?branch=master)
+The feature is controllable via the `A local shared file or folder was downloaded` setting on the personal page.
