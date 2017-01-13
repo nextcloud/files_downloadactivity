@@ -22,9 +22,13 @@
 namespace OCA\FilesDownloadActivity\Activity;
 
 use OC\Files\Filesystem;
-use OC\Files\View;
 use OCA\FilesDownloadActivity\CurrentUser;
 use OCP\Activity\IManager;
+use OCP\Files\Folder;
+use OCP\Files\InvalidPathException;
+use OCP\Files\IRootFolder;
+use OCP\Files\NotFoundException;
+use OCP\ILogger;
 use OCP\IRequest;
 use OCP\IURLGenerator;
 
@@ -35,20 +39,28 @@ class Listener {
 	protected $activityManager;
 	/** @var IURLGenerator */
 	protected $urlGenerator;
+	/** @var IRootFolder */
+	protected $rootFolder;
 	/** @var CurrentUser */
 	protected $currentUser;
+	/** @var ILogger */
+	protected $logger;
 
 	/**
 	 * @param IRequest $request
 	 * @param IManager $activityManager
 	 * @param IURLGenerator $urlGenerator
+	 * @param IRootFolder $rootFolder
 	 * @param CurrentUser $currentUser
+	 * @param ILogger $logger
 	 */
-	public function __construct(IRequest $request, IManager $activityManager, IURLGenerator $urlGenerator, CurrentUser $currentUser) {
+	public function __construct(IRequest $request, IManager $activityManager, IURLGenerator $urlGenerator, IRootFolder $rootFolder, CurrentUser $currentUser, ILogger $logger) {
 		$this->request = $request;
 		$this->activityManager = $activityManager;
 		$this->urlGenerator = $urlGenerator;
+		$this->rootFolder = $rootFolder;
 		$this->currentUser = $currentUser;
+		$this->logger = $logger;
 	}
 
 	/**
@@ -61,8 +73,15 @@ class Listener {
 			return;
 		}
 
-		list($filePath, $owner, $fileId, $isDir) = $this->getSourcePathAndOwner($path);
-		if ($fileId === 0 || $this->currentUser->getUID() === $owner) {
+		try {
+			list($filePath, $owner, $fileId, $isDir) = $this->getSourcePathAndOwner($path);
+		} catch (NotFoundException $e) {
+			return;
+		} catch (InvalidPathException $e) {
+			return;
+		}
+
+		if ($this->currentUser->getUID() === $owner) {
 			// Could not find the file for the owner ...
 			return;
 		}
@@ -103,39 +122,42 @@ class Listener {
 	}
 
 	/**
-	 * @copyright Copyright (c) 2016, ownCloud, Inc.
-	 * @author Joas Schilling <coding@schilljs.com>
-	 *
 	 * @param string $path
 	 * @return array
+	 * @throws NotFoundException
+	 * @throws InvalidPathException
 	 */
 	protected function getSourcePathAndOwner($path) {
-		$view = Filesystem::getView();
-		$uidOwner = $view->getOwner($path);
-		$fileId = 0;
+		$userFolder = $this->rootFolder->getUserFolder($this->currentUser->getUID());
+		$node = $userFolder->get($path);
+		$owner = $node->getOwner()->getUID();
 
-		if ($uidOwner !== $this->currentUser->getUID()) {
-			/** @var \OCP\Files\Storage\IStorage $storage */
-			list($storage,) = $view->resolvePath($path);
+		if ($owner !== $this->currentUser->getUID()) {
+			$storage = $node->getStorage();
 			if (!$storage->instanceOfStorage('OCA\Files_Sharing\External\Storage')) {
-				Filesystem::initMountPoints($uidOwner);
+				Filesystem::initMountPoints($owner);
 			} else {
 				// Probably a remote user, let's try to at least generate activities
 				// for the current user
-				$uidOwner = $this->currentUser->getUID();
+				$owner = $this->currentUser->getUID();
 			}
+
+			$ownerFolder = $this->rootFolder->getUserFolder($owner);
+			$nodes = $ownerFolder->getById($node->getId());
+
+			if (empty($nodes)) {
+				throw new NotFoundException($node->getPath());
+			}
+
+			$node = $nodes[0];
+			$path = substr($node->getPath(), strlen($ownerFolder->getPath()));
 		}
 
-		$info = Filesystem::getFileInfo($path);
-		if ($info !== false) {
-			$ownerView = new View('/' . $uidOwner . '/files');
-			$fileId = (int) $info['fileid'];
-			$path = $ownerView->getPath($fileId);
-			$isDir = $ownerView->is_dir($path);
-		} else {
-			$isDir = $view->is_dir($path);
-		}
-
-		return array($path, $uidOwner, $fileId, $isDir);
+		return [
+			$path,
+			$owner,
+			$node->getId(),
+			$node instanceof Folder
+		];
 	}
 }
