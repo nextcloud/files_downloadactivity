@@ -22,11 +22,13 @@
 namespace OCA\FilesDownloadActivity\Tests\AppInfo;
 
 
-use OCA\FilesDownloadActivity\Activity\Extension;
 use OCA\FilesDownloadActivity\Activity\Listener;
+use OCA\FilesDownloadActivity\Activity\Provider;
+use OCA\FilesDownloadActivity\Activity\Setting;
 use OCA\FilesDownloadActivity\AppInfo\Application;
 use OCA\FilesDownloadActivity\Tests\TestCase;
-use OCP\Activity\IExtension;
+use OCP\Activity\IProvider;
+use OCP\Activity\ISetting;
 
 /**
  * Class ApplicationTest
@@ -54,8 +56,10 @@ class ApplicationTest extends TestCase {
 
 	public function dataContainerQuery() {
 		return [
-			[Extension::class, Extension::class],
-			[Extension::class, IExtension::class],
+			[Setting::class, Setting::class],
+			[Setting::class, ISetting::class],
+			[Provider::class, Provider::class],
+			[Provider::class, IProvider::class],
 			[Listener::class, Listener::class],
 		];
 	}
