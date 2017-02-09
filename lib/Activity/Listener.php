@@ -73,6 +73,11 @@ class Listener {
 			return;
 		}
 
+		if ($this->currentUser->getUID() === null) {
+			// User is not logged in, this download is handled by the files_sharing app
+			return;
+		}
+
 		try {
 			list($filePath, $owner, $fileId, $isDir) = $this->getSourcePathAndOwner($path);
 		} catch (NotFoundException $e) {
@@ -138,18 +143,19 @@ class Listener {
 	 * @throws InvalidPathException
 	 */
 	protected function getSourcePathAndOwner($path) {
-		$userFolder = $this->rootFolder->getUserFolder($this->currentUser->getUID());
+		$currentUserId = $this->currentUser->getUID();
+		$userFolder = $this->rootFolder->getUserFolder($currentUserId);
 		$node = $userFolder->get($path);
 		$owner = $node->getOwner()->getUID();
 
-		if ($owner !== $this->currentUser->getUID()) {
+		if ($owner !== $currentUserId) {
 			$storage = $node->getStorage();
 			if (!$storage->instanceOfStorage('OCA\Files_Sharing\External\Storage')) {
 				Filesystem::initMountPoints($owner);
 			} else {
 				// Probably a remote user, let's try to at least generate activities
 				// for the current user
-				$owner = $this->currentUser->getUID();
+				$owner = $currentUserId;
 			}
 
 			$ownerFolder = $this->rootFolder->getUserFolder($owner);
