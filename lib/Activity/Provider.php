@@ -22,6 +22,7 @@
 namespace OCA\FilesDownloadActivity\Activity;
 
 use OCP\Activity\IEvent;
+use OCP\Activity\IEventMerger;
 use OCP\Activity\IManager;
 use OCP\Activity\IProvider;
 use OCP\IL10N;
@@ -47,8 +48,14 @@ class Provider implements IProvider {
 	/** @var IUserManager */
 	protected $userManager;
 
+	/** @var IEventMerger */
+	protected $eventMerger;
+
 	/** @var array */
 	protected $displayNames = [];
+
+	/** @var string */
+	protected $lastType = '';
 
 	const SUBJECT_SHARED_FILE_DOWNLOADED = 'shared_file_downloaded';
 	const SUBJECT_SHARED_FOLDER_DOWNLOADED = 'shared_folder_downloaded';
@@ -58,12 +65,14 @@ class Provider implements IProvider {
 	 * @param IURLGenerator $url
 	 * @param IManager $activityManager
 	 * @param IUserManager $userManager
+	 * @param IEventMerger $eventMerger
 	 */
-	public function __construct(IFactory $languageFactory, IURLGenerator $url, IManager $activityManager, IUserManager $userManager) {
+	public function __construct(IFactory $languageFactory, IURLGenerator $url, IManager $activityManager, IUserManager $userManager, IEventMerger $eventMerger) {
 		$this->languageFactory = $languageFactory;
 		$this->url = $url;
 		$this->activityManager = $activityManager;
 		$this->userManager = $userManager;
+		$this->eventMerger = $eventMerger;
 	}
 
 	/**
@@ -80,105 +89,101 @@ class Provider implements IProvider {
 		}
 
 		$this->l = $this->languageFactory->get('files_downloadactivity', $language);
+		$event->setIcon($this->url->getAbsoluteURL($this->url->imagePath('core', 'actions/share.svg')));
 
 		if ($this->activityManager->isFormattingFilteredObject()) {
 			try {
-				return $this->parseShortVersion($event);
+				return $this->parseShortVersion($event, $previousEvent);
 			} catch (\InvalidArgumentException $e) {
 				// Ignore and simply use the long version...
 			}
 		}
 
-		return $this->parseLongVersion($event);
+		return $this->parseLongVersion($event, $previousEvent);
 	}
 
 	/**
 	 * @param IEvent $event
+	 * @param IEvent $previousEvent
 	 * @return IEvent
 	 * @throws \InvalidArgumentException
 	 * @since 11.0.0
 	 */
-	public function parseShortVersion(IEvent $event) {
+	public function parseShortVersion(IEvent $event, IEvent $previousEvent = null) {
 		$parsedParameters = $this->getParsedParameters($event);
 		$params = $event->getSubjectParameters();
 
 		if ($params[2] === 'desktop') {
-			$event->setParsedSubject($this->l->t('Downloaded by %s (via desktop)', $parsedParameters['actor']['name']))
-				->setRichSubject($this->l->t('Downloaded by {actor} (via desktop)'), [
-					'actor' => $parsedParameters['actor'],
-				]);
+			$subject = $this->l->t('Downloaded by {actor} (via desktop)');
 		} else if ($params[2] === 'mobile') {
-			$event->setParsedSubject($this->l->t('Downloaded by %s (via mobile)', $parsedParameters['actor']['name']))
-				->setRichSubject($this->l->t('Downloaded by {actor} (via mobile)'), [
-					'actor' => $parsedParameters['actor'],
-				]);
+			$subject = $this->l->t('Downloaded by {actor} (via mobile)');
 		} else {
-			$event->setParsedSubject($this->l->t('Downloaded by %s (via web)', $parsedParameters['actor']['name']))
-				->setRichSubject($this->l->t('Downloaded by {actor} (via web)'), [
-					'actor' => $parsedParameters['actor'],
-				]);
+			$subject = $this->l->t('Downloaded by {actor} (via web)');
 		}
 
-		$event->setIcon($this->url->getAbsoluteURL($this->url->imagePath('core', 'actions/share.svg')));
+		$this->setSubjects($event, $subject, $parsedParameters);
+
+		if ($this->lastType !== $params[2]) {
+			$this->lastType = $params[2];
+			return $event;
+		}
+
+		return $this->eventMerger->mergeEvents('actor', $event, $previousEvent);
+	}
+
+	/**
+	 * @param IEvent $event
+	 * @param IEvent $previousEvent
+	 * @return IEvent
+	 * @throws \InvalidArgumentException
+	 * @since 11.0.0
+	 */
+	public function parseLongVersion(IEvent $event, IEvent $previousEvent = null) {
+		$parsedParameters = $this->getParsedParameters($event);
+		$params = $event->getSubjectParameters();
+
+		if ($params[2] === 'desktop') {
+			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the desktop client');
+		} else if ($params[2] === 'mobile') {
+			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the mobile client');
+		} else {
+			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the web interface');
+		}
+
+		$this->setSubjects($event, $subject, $parsedParameters);
+
+		if ($this->lastType !== $params[2]) {
+			$this->lastType = $params[2];
+			return $event;
+		}
+
+		$event = $this->eventMerger->mergeEvents('actor', $event, $previousEvent);
+		if ($event->getChildEvent() === null) {
+			$event = $this->eventMerger->mergeEvents('file', $event, $previousEvent);
+		}
+
 		return $event;
 	}
 
 	/**
 	 * @param IEvent $event
-	 * @return IEvent
+	 * @param string $subject
+	 * @param array $parameters
 	 * @throws \InvalidArgumentException
-	 * @since 11.0.0
 	 */
-	public function parseLongVersion(IEvent $event) {
-		$parsedParameters = $this->getParsedParameters($event);
-		$params = $event->getSubjectParameters();
-
-		if ($event->getSubject() === self::SUBJECT_SHARED_FOLDER_DOWNLOADED) {
-			if ($params[2] === 'desktop') {
-				$event->setParsedSubject($this->l->t('Shared file %1$s was downloaded by %2$s via the desktop client', [
-						$parsedParameters['file']['path'],
-						$parsedParameters['actor']['name'],
-					]))
-					->setRichSubject($this->l->t('Shared file {file} was downloaded by {actor} via the desktop client'), $parsedParameters);
-			} else if ($params[2] === 'mobile') {
-				$event->setParsedSubject($this->l->t('Shared file %1$s was downloaded by %2$s via the mobile client', [
-						$parsedParameters['file']['path'],
-						$parsedParameters['actor']['name'],
-					]))
-					->setRichSubject($this->l->t('Shared file {file} was downloaded by {actor} via the mobile client'), $parsedParameters);
+	protected function setSubjects(IEvent $event, $subject, array $parameters) {
+		$placeholders = $replacements = [];
+		foreach ($parameters as $placeholder => $parameter) {
+			$placeholders[] = '{' . $placeholder . '}';
+			if ($parameter['type'] === 'file') {
+				$replacements[] = $parameter['path'];
 			} else {
-				$event->setParsedSubject($this->l->t('Shared file %1$s was downloaded by %2$s via the web interface', [
-						$parsedParameters['file']['path'],
-						$parsedParameters['actor']['name'],
-					]))
-					->setRichSubject($this->l->t('Shared file {file} was downloaded by {actor} via the web interface'), $parsedParameters);
+				$replacements[] = $parameter['name'];
 			}
-		} else if ($event->getSubject() === self::SUBJECT_SHARED_FILE_DOWNLOADED) {
-			if ($params[2] === 'desktop') {
-				$event->setParsedSubject($this->l->t('Shared file %1$s was downloaded by %2$s via the desktop client', [
-						$parsedParameters['file']['path'],
-						$parsedParameters['actor']['name'],
-					]))
-					->setRichSubject($this->l->t('Shared file {file} was downloaded by {actor} via the desktop client'), $parsedParameters);
-			} else if ($params[2] === 'mobile') {
-				$event->setParsedSubject($this->l->t('Shared file %1$s was downloaded by %2$s via the mobile client', [
-						$parsedParameters['file']['path'],
-						$parsedParameters['actor']['name'],
-					]))
-					->setRichSubject($this->l->t('Shared file {file} was downloaded by {actor} via the mobile client'), $parsedParameters);
-			} else {
-				$event->setParsedSubject($this->l->t('Shared file %1$s was downloaded by %2$s via the web interface', [
-						$parsedParameters['file']['path'],
-						$parsedParameters['actor']['name'],
-					]))
-					->setRichSubject($this->l->t('Shared file {file} was downloaded by {actor} via the web interface'), $parsedParameters);
-			}
-		} else {
-			throw new \InvalidArgumentException();
 		}
 
-		$event->setIcon($this->url->getAbsoluteURL($this->url->imagePath('core', 'actions/share.svg')));
-		return $event;
+		$event->setParsedSubject(str_replace($placeholders, $replacements, $subject))
+			->setRichSubject($subject, $parameters);
 	}
 
 	protected function getParsedParameters(IEvent $event) {
