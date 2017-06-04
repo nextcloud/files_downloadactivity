@@ -1,0 +1,11 @@
+{ "translations": {
+    "Downloaded by {actor} (via desktop)" : "{actor} tarafından indirildi (masaüstü ile)",
+    "Downloaded by {actor} (via mobile)" : "{actor} tarafından indirildi (mobil ile)",
+    "Downloaded by {actor} (via web)" : "{actor} tarafından indirildi (web ile)",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "Paylaşılan {file} dosyası {actor} tarafından masaüstü istemcisi ile indirildi",
+    "Shared file {file} was downloaded by {actor} via the mobile client" : "Paylaşılan {file} dosyası {actor} tarafından mobil istemci ile indirildi",
+    "Shared file {file} was downloaded by {actor} via the web interface" : "Paylaşılan {file} dosyası {actor} tarafından web arayüzü ile indirildi",
+    "A local shared file or folder was <strong>downloaded</strong>" : "Yerel olarak paylaşılmış bir dosya ya da klasör <strong>indirildi</strong>",
+    "Activities for shared file downloads" : "Paylaşılmış dosya indirme işlemleri"
+},"pluralForm" :"nplurals=2; plural=(n > 1);"
+}
