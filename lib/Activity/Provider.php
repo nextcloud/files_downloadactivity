@@ -145,9 +145,9 @@ class Provider implements IProvider {
 		if ($params[2] === 'desktop') {
 			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the desktop client');
 		} else if ($params[2] === 'mobile') {
-			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the mobile client');
+			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the mobile app');
 		} else {
-			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the web interface');
+			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the browser');
 		}
 
 		$this->setSubjects($event, $subject, $parsedParameters);
