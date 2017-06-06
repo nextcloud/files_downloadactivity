@@ -116,9 +116,9 @@ class Provider implements IProvider {
 		if ($params[2] === 'desktop') {
 			$subject = $this->l->t('Downloaded by {actor} (via desktop)');
 		} else if ($params[2] === 'mobile') {
-			$subject = $this->l->t('Downloaded by {actor} (via mobile)');
+			$subject = $this->l->t('Downloaded by {actor} (via app)');
 		} else {
-			$subject = $this->l->t('Downloaded by {actor} (via web)');
+			$subject = $this->l->t('Downloaded by {actor} (via browser)');
 		}
 
 		$this->setSubjects($event, $subject, $parsedParameters);
