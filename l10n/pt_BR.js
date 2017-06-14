@@ -18,6 +18,6 @@ OC.L10N.register(
     "Shared file %1$s was downloaded by %2$s via the mobile client" : "O arquivo compartilhado %1$s foi baixado %2$s pelo celular",
     "Shared file {file} was downloaded by {actor} via the mobile client" : "O arquivo compartilhado {file} foi transferido por {actor} através do cliente móvel",
     "Shared file %1$s was downloaded by %2$s via the web interface" : "O arquivo compartilhado %1$s foi baixado por %2$s pela interface web",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "O arquivo compartilhado {file} foi transferido por {actor} através da interface web"
+    "Shared file {file} was downloaded by {actor} via the web interface" : "O arquivo compartilhado {file} foi baixado por {actor} através da interface web"
 },
 "nplurals=2; plural=(n > 1);");
