@@ -2,6 +2,8 @@ OC.L10N.register(
     "files_downloadactivity",
     {
     "Downloaded by {actor} (via desktop)" : "由{actor}下载(通过桌面)",
+    "Downloaded by {actor} (via app)" : "由{actor}下载(通过APP)",
+    "Downloaded by {actor} (via browser)" : "由{actor}下载(通过浏览器)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "共享文件{file}由{actor}通过桌面客户端下载",
     "A local shared file or folder was <strong>downloaded</strong>" : "本地共享文件或文件夹已被下载1",
     "Activities for shared file downloads" : "活动共享文件下载",
