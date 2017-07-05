@@ -89,7 +89,11 @@ class Provider implements IProvider {
 		}
 
 		$this->l = $this->languageFactory->get('files_downloadactivity', $language);
-		$event->setIcon($this->url->getAbsoluteURL($this->url->imagePath('core', 'actions/share.svg')));
+		if (method_exists($this->activityManager, 'getRequirePNG') && $this->activityManager->getRequirePNG()) {
+			$event->setIcon($this->url->getAbsoluteURL($this->url->imagePath('core', 'actions/share.png')));
+		} else {
+			$event->setIcon($this->url->getAbsoluteURL($this->url->imagePath('core', 'actions/share.svg')));
+		}
 
 		if ($this->activityManager->isFormattingFilteredObject()) {
 			try {
