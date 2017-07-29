@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_downloadactivity",
     {
+    "Downloaded by {actor} (via desktop)" : "E shkarkuar nga {aktori} (nëpërmjet desktopit)",
     "Downloaded by {actor} (via app)" : "Shkarkuar nga {actor} (via app)",
     "Downloaded by {actor} (via browser)" : "Shakarkuar nga {actor} (via browser)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Skedari i ndarë {file} u shkarkuar nga {actor} duke përdorur klientin e desktopit ",
