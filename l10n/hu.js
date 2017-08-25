@@ -13,6 +13,7 @@ OC.L10N.register(
     "Downloaded by %s (via mobile)" : "Letöltve %s (mobil alkalmazással)",
     "Downloaded by {actor} (via mobile)" : "Letöltve {actor} (mobil alkalmazással)",
     "Downloaded by %s (via web)" : "Letöltve %s (böngészővel)",
-    "Downloaded by {actor} (via web)" : "Letöltve {actor} (böngészővel)"
+    "Downloaded by {actor} (via web)" : "Letöltve {actor} (böngészővel)",
+    "Shared file {file} was downloaded by {actor} via the mobile client" : "Megosztott fájl {file} letöltve {actor} mobil klienssel"
 },
 "nplurals=2; plural=(n != 1);");
