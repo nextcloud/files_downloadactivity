@@ -3,7 +3,7 @@ OC.L10N.register(
     {
     "Downloaded by {actor} (via desktop)" : "{actor} parsisiuntė (per darbalaukio klientą)",
     "Downloaded by {actor} (via app)" : "{actor} parsisiuntė (per programėlę)",
-    "Downloaded by {actor} (via browser)" : "{actor} parsisiuntė (per naršyklę)",
+    "Downloaded by {actor} (via browser)" : "{actor} atsisiuntė (per naršyklę)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "{actor} parsisiuntė \"{file}\" per darbalaukio klientą",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} parsisiuntė \"{file} per mobiliąją programėlę",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} parsisiuntė \"{file}\" per naršyklę",
