@@ -4,7 +4,7 @@ OC.L10N.register(
     "Downloaded by {actor} (via desktop)" : "Скачано {actor} (на настольный ПК)",
     "Downloaded by {actor} (via app)" : "Скачано {actor} (через приложение)",
     "Downloaded by {actor} (via browser)" : "Скачано {actor} (через браузер)",
-    "Shared file {file} was downloaded by {actor} via the desktop client" : " {actor} скачал опубликованный файл {file} на настольный ПК",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : " {actor} скачал файл {file} на настольный ПК",
     "Shared file {file} was downloaded by {actor} via the mobile app" : " {actor} скачал опубликованный файл {file} используя приложение для мобильных устройств",
     "Shared file {file} was downloaded by {actor} via the browser" : " {actor} скачал опубликованный файл {file} используя браузер",
     "A local shared file or folder was <strong>downloaded</strong>" : "Общий локальный файл или каталог был <strong>скачан</strong>",
