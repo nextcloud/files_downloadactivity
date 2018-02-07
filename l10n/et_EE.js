@@ -1,0 +1,12 @@
+OC.L10N.register(
+    "files_downloadactivity",
+    {
+    "Downloaded by {actor} (via desktop)" : "Alla laetud {actor} poolt (töölauarakendus)",
+    "Downloaded by {actor} (via app)" : "Alla laetud {actor} poolt (telefonirakendus)",
+    "Downloaded by {actor} (via browser)" : "Alla laetud {actor} poolt (brauser)",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "Jagatud fail {file} laeti alla {actor} poolt töölauakliendi kaudu",
+    "Shared file {file} was downloaded by {actor} via the mobile app" : "Jagatud fail {file} laeti alla {actor} poolt mobiilirakenduse kaudu",
+    "Shared file {file} was downloaded by {actor} via the browser" : "Jagatud fail {file} laeti alla {actor} poolt brauseri kaudu",
+    "A local shared file or folder was <strong>downloaded</strong>" : "Kohalik jagatud fail või kaust <strong>laeti alla</strong>"
+},
+"nplurals=2; plural=(n != 1);");
