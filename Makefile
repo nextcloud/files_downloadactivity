@@ -32,7 +32,7 @@ appstore: clean
 	--exclude=.github \
 	--exclude=.gitignore \
 	--exclude=l10n/no-php \
-	--exclude=l10n/.tx \
+	--exclude=.tx \
 	--exclude=Makefile \
 	--exclude=README.md \
 	--exclude=.scrutinizer.yml \
