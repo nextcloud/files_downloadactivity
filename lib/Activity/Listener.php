@@ -282,7 +282,7 @@ class Listener {
 			$nodes = $ownerFolder->getById($node->getId());
 
 			if (empty($nodes)) {
-				// throw new NotFoundException($node->getPath());
+				throw new NotFoundException($node->getPath());
 			}
 
 			$node = $nodes[0];
