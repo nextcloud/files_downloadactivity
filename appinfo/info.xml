@@ -30,6 +30,10 @@
 			<setting>OCA\FilesDownloadActivity\Activity\Setting</setting>
 		</settings>
 
+		<filters>
+			<filter>OCA\FilesDownloadActivity\Activity\Filter\FileShares</filter>
+		</filters>
+
 		<providers>
 			<provider>OCA\FilesDownloadActivity\Activity\Provider</provider>
 		</providers>

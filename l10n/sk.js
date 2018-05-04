@@ -9,9 +9,15 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the browser" : "Sprístupnený súbor {file} bol stiahnutý používateľom {actor} pomocou prehliadača",
     "A local shared file or folder was <strong>downloaded</strong>" : "Lokálny sprístupnený súbor alebo priečinok bol <strong>stiahnutý</strong>",
     "Activities for shared file downloads" : "Aktivity pre sťahovania sprístupneného súboru",
+    "Downloaded by %s (via desktop)" : "Stiahnuté používateľom %s (pomocou PC klienta)",
+    "Downloaded by %s (via mobile)" : "Stiahnuté používateľom %s (pomocou mobilu)",
     "Downloaded by {actor} (via mobile)" : "Stiahunté používateľom {actor} (pomocou mobilu)",
+    "Downloaded by %s (via web)" : "Stiahnuté používateľom %s (cez web)",
     "Downloaded by {actor} (via web)" : "Stiahunté používateľom {actor} (cez web)",
+    "Shared file %1$s was downloaded by %2$s via the desktop client" : "Sprístupnený súbor %1$s bol stiahnutý používateľom %2$s pomocou PC klienta",
+    "Shared file %1$s was downloaded by %2$s via the mobile client" : "Sprístupnený súbor %1$s bol stiahnutý používateľom %2$s pomocou mobilnej aplikácie",
     "Shared file {file} was downloaded by {actor} via the mobile client" : "Sprístupnený súbor {file} bol stiahnutý používateľom {actor} pomocou mobilnej aplikácie",
+    "Shared file %1$s was downloaded by %2$s via the web interface" : "Sprístupnený súbor %1$s bol stiahnutý používateľom %2$s cez web",
     "Shared file {file} was downloaded by {actor} via the web interface" : "Sprístupnený súbor {file} bol stiahnutý používateľom {actor} pomocou web rozhrania"
 },
 "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;");

@@ -9,9 +9,15 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the browser" : "Współdzielony plik {file} został pobrany przez {actor} za pomocą przeglądarki",
     "A local shared file or folder was <strong>downloaded</strong>" : "Udostępniony plik lub folder lokalny został <strong>pobrany</strong>",
     "Activities for shared file downloads" : "Aktywność pobrań współdzielonego pliku",
+    "Downloaded by %s (via desktop)" : "Pobrano przez %s (przez klienta desktopowego)",
+    "Downloaded by %s (via mobile)" : "Pobrano przez %s (przez aplikację mobilną)",
     "Downloaded by {actor} (via mobile)" : "Pobrano przez {actor} (przez aplikację mobilną)",
+    "Downloaded by %s (via web)" : "Pobrano przez %s (przez przeglądarkę)",
     "Downloaded by {actor} (via web)" : "Pobrano przez {actor} (przez przeglądarkę)",
+    "Shared file %1$s was downloaded by %2$s via the desktop client" : "Współdzielony plik %1$s został pobrany przez %2$s za pomocą klienta desktopowego",
+    "Shared file %1$s was downloaded by %2$s via the mobile client" : "Współdzielony plik %1$s został pobrany przez %2$s za pomocą aplikacji mobilnej",
     "Shared file {file} was downloaded by {actor} via the mobile client" : "Współdzielony plik {file} został pobrany przez {actor} za pomocą aplikacji mobilnej",
+    "Shared file %1$s was downloaded by %2$s via the web interface" : "Współdzielony plik %1$s został pobrany przez %2$s za pomocą przeglądarki",
     "Shared file {file} was downloaded by {actor} via the web interface" : "Współdzielony plik {file} został pobrany przez {actor} za pomocą przeglądarki"
 },
 "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);");
