@@ -59,6 +59,8 @@ class Provider implements IProvider {
 
 	const SUBJECT_SHARED_FILE_DOWNLOADED = 'shared_file_downloaded';
 	const SUBJECT_SHARED_FOLDER_DOWNLOADED = 'shared_folder_downloaded';
+	const SUBJECT_SHARED_FILE_ACCESSED = 'shared_file_accessed';
+	const SUBJECT_SHARED_FOLDER_ACCESSED = 'shared_folder_accessed';
 
 	/**
 	 * @param IFactory $languageFactory
@@ -116,13 +118,29 @@ class Provider implements IProvider {
 	public function parseShortVersion(IEvent $event, IEvent $previousEvent = null) {
 		$parsedParameters = $this->getParsedParameters($event);
 		$params = $event->getSubjectParameters();
+		$subject = $event->getSubject();
 
-		if ($params[2] === 'desktop') {
-			$subject = $this->l->t('Downloaded by {actor} (via desktop)');
-		} else if ($params[2] === 'mobile') {
-			$subject = $this->l->t('Downloaded by {actor} (via app)');
-		} else {
-			$subject = $this->l->t('Downloaded by {actor} (via browser)');
+		switch($subject) {
+			case self::SUBJECT_SHARED_FOLDER_DOWNLOADED:
+			case self::SUBJECT_SHARED_FILE_DOWNLOADED:
+				if ($params[2] === 'desktop') {
+					$subject = $this->l->t('Downloaded by {actor} (via desktop)');
+				} else if ($params[2] === 'mobile') {
+					$subject = $this->l->t('Downloaded by {actor} (via app)');
+				} else {
+					$subject = $this->l->t('Downloaded by {actor} (via browser)');
+				}
+				break;
+			case self::SUBJECT_SHARED_FILE_ACCESSED:
+			case self::SUBJECT_SHARED_FOLDER_ACCESSED:
+				if ($params[2] === 'desktop') {
+					$subject = $this->l->t('Accessed by {actor} (via desktop)');
+				} else if ($params[2] === 'mobile') {
+					$subject = $this->l->t('Accessed by {actor} (via app)');
+				} else {
+					$subject = $this->l->t('Accessed by {actor} (via browser)');
+				}
+				break;
 		}
 
 		$this->setSubjects($event, $subject, $parsedParameters);
@@ -145,13 +163,29 @@ class Provider implements IProvider {
 	public function parseLongVersion(IEvent $event, IEvent $previousEvent = null) {
 		$parsedParameters = $this->getParsedParameters($event);
 		$params = $event->getSubjectParameters();
+		$subject = $event->getSubject();
 
-		if ($params[2] === 'desktop') {
-			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the desktop client');
-		} else if ($params[2] === 'mobile') {
-			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the mobile app');
-		} else {
-			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the browser');
+		switch($subject) {
+			case self::SUBJECT_SHARED_FOLDER_DOWNLOADED:
+			case self::SUBJECT_SHARED_FILE_DOWNLOADED:
+				if ($params[2] === 'desktop') {
+					$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the desktop client');
+				} else if ($params[2] === 'mobile') {
+					$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the mobile app');
+				} else {
+					$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the browser');
+				}
+				break;
+			case self::SUBJECT_SHARED_FILE_ACCESSED:
+			case self::SUBJECT_SHARED_FOLDER_ACCESSED:
+				if ($params[2] === 'desktop') {
+					$subject = $this->l->t('Shared file {file} was accessed by {actor} via the desktop client with token {token}');
+				} else if ($params[2] === 'mobile') {
+					$subject = $this->l->t('Shared file {file} was accessed by {actor} via the mobile app with token {token}');
+				} else {
+					$subject = $this->l->t('Shared file {file} was accessed by {actor} via the browser with token {token}');
+				}
+				break;
 		}
 
 		$this->setSubjects($event, $subject, $parsedParameters);
@@ -197,10 +231,13 @@ class Provider implements IProvider {
 		switch ($subject) {
 			case self::SUBJECT_SHARED_FOLDER_DOWNLOADED:
 			case self::SUBJECT_SHARED_FILE_DOWNLOADED:
+			case self::SUBJECT_SHARED_FILE_ACCESSED:
+			case self::SUBJECT_SHARED_FOLDER_ACCESSED:
 				$id = key($parameters[0]);
 				return [
 					'file' => $this->generateFileParameter($id, $parameters[0][$id]),
 					'actor' => $this->generateUserParameter($parameters[1]),
+					'token' => $this->generateTokenParameter($parameters[3]),
 				];
 		}
 		return [];
@@ -218,6 +255,22 @@ class Provider implements IProvider {
 			'name' => basename($path),
 			'path' => $path,
 			'link' => $this->url->linkToRouteAbsolute('files.viewcontroller.showFile', ['fileid' => $id]),
+		];
+	}
+
+	/**
+	 * @param string $uid
+	 * @return array
+	 */
+	protected function generateTokenParameter($uid) {
+		if (!isset($this->displayNames[$uid])) {
+			$this->displayNames[$uid] = $this->getDisplayName($uid);
+		}
+
+		return [
+			'type' => 'token',
+			'id' => $uid,
+			'name' => $this->displayNames[$uid],
 		];
 	}
 

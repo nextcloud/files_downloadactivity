@@ -9,9 +9,15 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the browser" : "O ficheiro compartido {file} foi descargado por {actor} co navegador",
     "A local shared file or folder was <strong>downloaded</strong>" : "Foi <strong>descargado</strong> un ficheiro ou cartafol local",
     "Activities for shared file downloads" : "Actividades para os ficheiros compartidos descargados",
+    "Downloaded by %s (via desktop)" : "Descargado por %s (co cliente de escritorio)",
+    "Downloaded by %s (via mobile)" : "Descargado por %s (co móbil)",
     "Downloaded by {actor} (via mobile)" : "Descargado por {actor} (co móbil)",
+    "Downloaded by %s (via web)" : "Descargado por %s (coa interface web)",
     "Downloaded by {actor} (via web)" : "Descargado por {actor} (coa interface web)",
+    "Shared file %1$s was downloaded by %2$s via the desktop client" : "O ficheiro compartido %1$s foi descargado por %2$s co cliente de escritorio",
+    "Shared file %1$s was downloaded by %2$s via the mobile client" : "O ficheiro compartido %1$s foi descargado por %2$s co cliente do móbil",
     "Shared file {file} was downloaded by {actor} via the mobile client" : "O ficheiro compartido {file} foi descargado por {actor} co cliente do móbil",
+    "Shared file %1$s was downloaded by %2$s via the web interface" : "O ficheiro compartido %1$s foi descargado por %2$s coa interface web",
     "Shared file {file} was downloaded by {actor} via the web interface" : "O ficheiro compartido {file} foi descargado por {actor} coa interface web"
 },
 "nplurals=2; plural=(n != 1);");

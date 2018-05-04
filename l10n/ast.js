@@ -6,7 +6,10 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} baxó'l ficheru compartíu {file} pel restolador",
     "A local shared file or folder was <strong>downloaded</strong>" : "<strong>Baxóse</strong> un ficheru o carpeta compartíos llocales",
     "Activities for shared file downloads" : "Actividaes pa les descargues de ficheros compartíos",
+    "Shared file %1$s was downloaded by %2$s via the desktop client" : "%2$s baxó'l ficheru compartíu %1$s pel veceru d'escritoriu",
+    "Shared file %1$s was downloaded by %2$s via the mobile client" : "%2$s baxó'l ficheru compartíu %1$s pel veceru móvil",
     "Shared file {file} was downloaded by {actor} via the mobile client" : "{actor} baxó'l ficheru compartíu {file} pel veceru móvil",
+    "Shared file %1$s was downloaded by %2$s via the web interface" : "%2$s baxó'l ficheru compartíu %1$s pela interfaz web",
     "Shared file {file} was downloaded by {actor} via the web interface" : "{actor} baxó'l ficheru compartíu {file} pela interfaz web"
 },
 "nplurals=2; plural=(n != 1);");

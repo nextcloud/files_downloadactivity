@@ -36,6 +36,8 @@ class Application extends App {
 	 */
 	public function register() {
 		Util::connectHook('OC_Filesystem', 'read', $this, 'listenReadFile');
+		// version 13
+		Util::connectHook('OCP\Share', 'share_link_access', $this, 'listenShareAccess');
 	}
 
 	/**
@@ -45,5 +47,14 @@ class Application extends App {
 		/** @var Listener $hooks */
 		$hooks = $this->getContainer()->query(Listener::class);
 		$hooks->readFile($params['path']);
+	}
+
+	/**
+	 * @param array $params
+	 */
+	public function listenShareAccess($params) {
+		/** @var Listener $hooks */
+		$hooks = $this->getContainer()->query(Listener::class);
+		$hooks->shareAccessFile($params);
 	}
 }

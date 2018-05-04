@@ -136,6 +136,126 @@ class Listener {
 		}
 	}
 
+	private function getUserIP() {
+	    $client = (isset($_SERVER['HTTP_CLIENT_IP'])?$_SERVER['HTTP_CLIENT_IP']:false);
+	    $forward = (isset($_SERVER['HTTP_X_FORWARDED_FOR'])?$_SERVER['HTTP_X_FORWARDED_FOR']:false);
+	    $remote  = $_SERVER['REMOTE_ADDR'];
+
+		if (strpos($forward, ',') > 0) {
+            $forward = explode(",",$forward);
+            $forward = trim($forward[0]);
+        }
+
+	    if (filter_var($client, FILTER_VALIDATE_IP)) {
+	        $ip = $client;
+	    } elseif(filter_var($forward, FILTER_VALIDATE_IP)) {
+	        $ip = $forward;
+	    } else {
+	        $ip = $remote;
+	    }
+
+	    return $ip;
+	}
+
+	/**
+	 * Store the update hook events
+	 * @param string $path Path of the file that has been read
+	 */
+	public function shareAccessFile($params) {
+		$file = \OC::$server->getRootFolder()->getById($params['itemSource']);
+
+		foreach($file as $k => $v) {
+			$fileinfo = $v->getFileInfo();
+			$path = $fileinfo->getPath();
+		}
+		// Do not add activities for .part-files
+		if (substr($path, -5) === '.part') {
+			return;
+		}
+
+		try {
+			$client = 'web';
+			if ($this->request->isUserAgent([IRequest::USER_AGENT_CLIENT_DESKTOP])) {
+				$client = 'desktop';
+			} else if ($this->request->isUserAgent([IRequest::USER_AGENT_CLIENT_ANDROID, IRequest::USER_AGENT_CLIENT_IOS])) {
+				$client = 'mobile';
+			}
+			// Fix for setIncognitoMode being called in the ShareController Class
+			// Do not call $this->currentUser->getUID() prior to this, will return nothing afterwards
+			\OC_User::setIncognitoMode(false);
+
+			if ($user = \OC::$server->getUserSession()->getUser()) {
+				$user = $user->getUID();
+			}
+
+			$data = [
+				'path'		=> $path,
+				'token'		=> $params['token'],
+				'code'		=> $params['errorCode'],
+				'ip'		=> $this->getUserIP(),
+				'user'		=> $user,
+				'client'	=> $client,
+				'owner'		=> $fileinfo->getOwner()->getUID(),
+				'owner_folder'		=> $this->rootFolder->getUserFolder($fileinfo->getOwner()->getUID())->getPath(),
+				'file_id'	=> $fileinfo->getId(),
+				'is_dir'	=> $fileinfo instanceof Folder,
+				'subject'	=> Provider::SUBJECT_SHARED_FILE_ACCESSED,
+				'link'		=> []
+			];
+
+			// Fix for setIncognitoMode being called in the ShareController Class
+			\OC_User::setIncognitoMode(true);
+
+			$data['path'] = substr($data['path'], strlen($data['owner_folder']));
+
+			if ($data['is_dir']) {
+				$data['subject'] = Provider::SUBJECT_SHARED_FOLDER_ACCESSED;
+				$data['link'] = [
+					'dir' => $data['path'],
+				];
+			} else {
+				$data['link'] = [
+					'dir'		=> (substr_count($data['path'], '/') === 1) ? '/' : dirname($data['path']),
+					'scrollto'	=> basename($data['path'])
+				];
+			}
+
+			if (empty($data['user'])) {
+				$data['user'] = $data['ip'];
+			}
+
+			$data['subject_params'] = [[$data['file_id'] => $data['path']], $data['user'], $data['client'], $data['token'], $data['code']];
+		} catch (NotFoundException $e) {
+			return;
+		} catch (InvalidPathException $e) {
+			return;
+		}
+
+		try {
+			$event = $this->activityManager->generateEvent();
+			$event->setApp('files_downloadactivity')
+					->setType('public_links')
+					->setTimestamp(time())
+					->setSubject($data['subject'], $data['subject_params'])
+					->setObject('files', $data['file_id'], $data['path'])
+					->setLink($this->urlGenerator->linkToRouteAbsolute('files.view.index', $data['link']))
+					->setAffectedUser($data['owner']);
+
+			if ($data['owner'] !== $data['user']) {
+				$event->setAuthor($data['user']);
+			}
+			$this->activityManager->publish($event);
+		} catch (\InvalidArgumentException $e) {
+			$this->logger->logException($e, [
+				'app' => 'files_downloadactivity',
+			]);
+		} catch (\BadMethodCallException $e) {
+			$this->logger->logException($e, [
+				'app' => 'files_downloadactivity',
+			]);
+		}
+	}
+
 	/**
 	 * @param string $path
 	 * @return array
@@ -162,7 +282,7 @@ class Listener {
 			$nodes = $ownerFolder->getById($node->getId());
 
 			if (empty($nodes)) {
-				throw new NotFoundException($node->getPath());
+				// throw new NotFoundException($node->getPath());
 			}
 
 			$node = $nodes[0];
@@ -177,3 +297,4 @@ class Listener {
 		];
 	}
 }
+?>
