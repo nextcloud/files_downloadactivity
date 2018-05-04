@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Downloaded by {actor} (via desktop)" : "Nedladdad av {actor} (via skrivbord)",
     "Downloaded by {actor} (via app)" : "Nedladdad av {actor} (via app)",

@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Downloaded by {actor} (via desktop)" : "{actor} 님이 다운로드함(데스크톱으로)",
     "Downloaded by {actor} (via app)" : "{actor} 님이 다운로드함(앱으로)",

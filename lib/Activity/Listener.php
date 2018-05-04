@@ -31,6 +31,7 @@ use OCP\Files\NotFoundException;
 use OCP\ILogger;
 use OCP\IRequest;
 use OCP\IURLGenerator;
+use OCP\IGroupManager;
 
 class Listener {
 	/** @var IRequest */
@@ -45,6 +46,8 @@ class Listener {
 	protected $currentUser;
 	/** @var ILogger */
 	protected $logger;
+	/** @var IGroupManager */
+	protected $groupManager;
 
 	/**
 	 * @param IRequest $request
@@ -53,14 +56,16 @@ class Listener {
 	 * @param IRootFolder $rootFolder
 	 * @param CurrentUser $currentUser
 	 * @param ILogger $logger
+	 * @param IGroupManager $groupManager
 	 */
-	public function __construct(IRequest $request, IManager $activityManager, IURLGenerator $urlGenerator, IRootFolder $rootFolder, CurrentUser $currentUser, ILogger $logger) {
+	public function __construct(IRequest $request, IManager $activityManager, IURLGenerator $urlGenerator, IRootFolder $rootFolder, CurrentUser $currentUser, ILogger $logger, IGroupManager $groupManager) {
 		$this->request = $request;
 		$this->activityManager = $activityManager;
 		$this->urlGenerator = $urlGenerator;
 		$this->rootFolder = $rootFolder;
 		$this->currentUser = $currentUser;
 		$this->logger = $logger;
+		$this->groupManager = $groupManager;
 	}
 
 	/**
@@ -114,25 +119,54 @@ class Listener {
 			];
 		}
 
+		$timeStamp = time();
 		try {
 			$event = $this->activityManager->generateEvent();
-			$event->setApp('files_downloadactivity')
+			$event->setApp('files_downloadactivity_tk')
 				->setType('file_downloaded')
 				->setAffectedUser($owner)
 				->setAuthor($this->currentUser->getUID())
-				->setTimestamp(time())
+				->setTimestamp($timeStamp)
 				->setSubject($subject, $subjectParams)
 				->setObject('files', $fileId, $filePath)
 				->setLink($this->urlGenerator->linkToRouteAbsolute('files.view.index', $linkData));
 			$this->activityManager->publish($event);
 		} catch (\InvalidArgumentException $e) {
 			$this->logger->logException($e, [
-				'app' => 'files_downloadactivity',
+				'app' => 'files_downloadactivity_tk',
 			]);
 		} catch (\BadMethodCallException $e) {
 			$this->logger->logException($e, [
-				'app' => 'files_downloadactivity',
+				'app' => 'files_downloadactivity_tk',
 			]);
+		}
+
+		$admins = $this->groupManager->get('admin');
+		foreach ($admins->getUsers() as $admin) {
+			if ($admin->getUID() === $owner) {
+				continue;
+			}
+
+			try {
+				$event = $this->activityManager->generateEvent();
+				$event->setApp('files_downloadactivity_tk')
+					->setType('file_downloaded')
+					->setAffectedUser($admin->getUID())
+					->setAuthor($this->currentUser->getUID())
+					->setTimestamp(time())
+					->setSubject($subject, $subjectParams)
+					->setObject('files', $fileId, $filePath)
+					->setLink($this->urlGenerator->linkToRouteAbsolute('files.view.index', $linkData));
+				$this->activityManager->publish($event);
+			} catch (\InvalidArgumentException $e) {
+				$this->logger->logException($e, [
+					'app' => 'files_downloadactivity_tk',
+				]);
+			} catch (\BadMethodCallException $e) {
+				$this->logger->logException($e, [
+					'app' => 'files_downloadactivity_tk',
+				]);
+			}
 		}
 	}
 

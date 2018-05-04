@@ -7,7 +7,7 @@ php:
 env:
   global:
     - CORE_BRANCH=master
-    - APP_NAME=files_downloadactivity
+    - APP_NAME=files_downloadactivity_tk
   matrix:
     - DB=sqlite
 

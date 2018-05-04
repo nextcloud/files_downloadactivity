@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Shared file {file} was downloaded by {actor} via the desktop client" : "{actor} baxó'l ficheru compartíu {file} pel veceru d'escritoriu",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} baxó'l ficheru compartíu {file} pela aplicación móvil",

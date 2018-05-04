@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Downloaded by {actor} (via desktop)" : "Descargado por {actor} (vía el cliente de escritorio)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "El archivo compartido {file} fue descargado por {actor} vía el cliente de escritorio",

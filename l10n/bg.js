@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Downloaded by {actor} (via desktop)" : "Изтеглен от {actor} (чрез настолен компютър)",
     "Downloaded by {actor} (via app)" : "Изтеглен от {actor} (чрез мобилно приложение)",

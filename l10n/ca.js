@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Downloaded by {actor} (via desktop)" : "Descarregat per {actor} (a través d'escriptori)",
     "Downloaded by {actor} (via app)" : "Descarregat per {actor} (a través de l'aplicació)",

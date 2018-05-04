@@ -7,7 +7,7 @@ pipeline:
   signed-off-check:
     image: nextcloudci/php7.0:php7.0-2
     environment:
-      - APP_NAME=files_downloadactivity
+      - APP_NAME=files_downloadactivity_tk
       - CORE_BRANCH=master
       - DB=sqlite
     commands:

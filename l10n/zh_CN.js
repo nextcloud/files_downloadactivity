@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Downloaded by {actor} (via desktop)" : "由{actor}下载(通过桌面)",
     "Downloaded by {actor} (via app)" : "由{actor}下载(通过APP)",

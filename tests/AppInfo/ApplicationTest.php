@@ -51,7 +51,7 @@ class ApplicationTest extends TestCase {
 
 	public function testContainerAppName() {
 		$this->app = new Application();
-		$this->assertEquals('files_downloadactivity', $this->container->getAppName());
+		$this->assertEquals('files_downloadactivity_tk', $this->container->getAppName());
 	}
 
 	public function dataContainerQuery() {

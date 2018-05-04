@@ -1,6 +1,6 @@
 # Makefile for building the project
 
-app_name=files_downloadactivity
+app_name=files_downloadactivity_tk
 
 project_dir=$(CURDIR)/../$(app_name)
 build_dir=$(CURDIR)/build/artifacts

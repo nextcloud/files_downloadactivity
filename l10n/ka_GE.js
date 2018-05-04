@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Downloaded by {actor} (via desktop)" : "გადმოწერა {actor} მომხმარებელმა (დესკტოპით)",
     "Downloaded by {actor} (via app)" : "გადმოწერა {actor} მომხმარებელმა (აპლიკაციით)",

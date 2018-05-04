@@ -28,7 +28,7 @@ use OCP\Util;
 class Application extends App {
 
 	public function __construct() {
-		parent::__construct('files_downloadactivity');
+		parent::__construct('files_downloadactivity_tk');
 	}
 
 	/**

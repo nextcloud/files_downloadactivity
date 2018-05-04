@@ -12,8 +12,8 @@
 	<!-- filters for code coverage -->
 	<filter>
 		<whitelist>
-			<directory suffix=".php">../../files_downloadactivity/appinfo</directory>
-			<directory suffix=".php">../../files_downloadactivity/lib</directory>
+			<directory suffix=".php">../../files_downloadactivity_tk/appinfo</directory>
+			<directory suffix=".php">../../files_downloadactivity_tk/lib</directory>
 		</whitelist>
 	</filter>
 	<logging>

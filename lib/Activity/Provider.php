@@ -84,11 +84,11 @@ class Provider implements IProvider {
 	 * @since 11.0.0
 	 */
 	public function parse($language, IEvent $event, IEvent $previousEvent = null) {
-		if ($event->getApp() !== 'files_downloadactivity') {
+		if ($event->getApp() !== 'files_downloadactivity_tk') {
 			throw new \InvalidArgumentException();
 		}
 
-		$this->l = $this->languageFactory->get('files_downloadactivity', $language);
+		$this->l = $this->languageFactory->get('files_downloadactivity_tk', $language);
 		if (method_exists($this->activityManager, 'getRequirePNG') && $this->activityManager->getRequirePNG()) {
 			$event->setIcon($this->url->getAbsoluteURL($this->url->imagePath('core', 'actions/share.png')));
 		} else {

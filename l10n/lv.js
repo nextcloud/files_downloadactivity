@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity",
+    "files_downloadactivity_tk",
     {
     "Downloaded by {actor} (via desktop)" : "Lejupielādēja {actor} (izmantojot darbavirsmu)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Koplietoto datni {file} lejupielādēja {actor} izmantojot darbavirsmas klientu",

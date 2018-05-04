@@ -2,8 +2,8 @@
 host = https://www.transifex.com
 lang_map = bg_BG: bg, cs_CZ: cs, fi_FI: fi, hu_HU: hu, nb_NO: nb, sk_SK: sk, th_TH: th, ja_JP: ja
 
-[nextcloud.files_downloadactivity]
-file_filter = translationfiles/<lang>/files_downloadactivity.po
-source_file = translationfiles/templates/files_downloadactivity.pot
+[nextcloud.files_downloadactivity_tk]
+file_filter = translationfiles/<lang>/files_downloadactivity_tk.po
+source_file = translationfiles/templates/files_downloadactivity_tk.pot
 source_lang = en
 type = PO
