@@ -19,5 +19,5 @@
  *
  */
 
-$application = new \OCA\FilesDownloadActivity\AppInfo\Application();
+$application = new \OCA\FilesTrackDownloads\AppInfo\Application();
 $application->register();

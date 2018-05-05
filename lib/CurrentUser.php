@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\FilesDownloadActivity;
+namespace OCA\FilesTrackDownloads;
 
 
 use OCP\IRequest;

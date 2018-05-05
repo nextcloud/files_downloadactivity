@@ -19,16 +19,16 @@
  *
  */
 
-namespace OCA\FilesDownloadActivity\AppInfo;
+namespace OCA\FilesTrackDownloads\AppInfo;
 
-use OCA\FilesDownloadActivity\Activity\Listener;
+use OCA\FilesTrackDownloads\Activity\Listener;
 use OCP\AppFramework\App;
 use OCP\Util;
 
 class Application extends App {
 
 	public function __construct() {
-		parent::__construct('files_downloadactivity_tk');
+		parent::__construct('files_trackdownloads');
 	}
 
 	/**

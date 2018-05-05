@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <info>
-	<id>files_downloadactivity_tk</id>
-	<name>Activities for shared file downloads (extended by Timo Kunze)</name>
-	<description>Creates activities for downloads of files that were shared with other users or a group</description>
+	<id>files_trackdownloads</id>
+	<name>Activities for shared file downloads, visible to all admins</name>
+	<description>Creates activities (visible to any administrator) for downloads of files that were shared with other users or a group. This app is based on the Download Activities app by Joas Schilling</description>
 	<licence>AGPL</licence>
 	<author>Joas Schilling, Timo Kunze</author>
 
 	<category>files</category>
 	<category>monitoring</category>
-	<screenshot>https://raw.githubusercontent.com/nextcloud/files_downloadactivity_tk/master/docs/screenshot.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/files_trackdownloads/master/docs/screenshot.png</screenshot>
 
-	<website>https://github.com/timokunze/files_downloadactivity_tk</website>
-	<bugs>https://github.com/timokunze/files_downloadactivity_tk/issues</bugs>
-	<repository>https://github.com/timokunze/files_downloadactivity_tk</repository>
+	<website>https://github.com/timokunze/files_trackdownloads</website>
+	<bugs>https://github.com/timokunze/files_trackdownloads/issues</bugs>
+	<repository>https://github.com/timokunze/files_trackdownloads</repository>
 
 	<version>1.2.1</version>
-	<namespace>FilesDownloadActivity</namespace>
+	<namespace>FilesTrackDownloads</namespace>
 
 	<types>
 		<filesystem/>
@@ -27,11 +27,11 @@
 
 	<activity>
 		<settings>
-			<setting>OCA\FilesDownloadActivity\Activity\Setting</setting>
+			<setting>OCA\FilesTrackDownloads\Activity\Setting</setting>
 		</settings>
 
 		<providers>
-			<provider>OCA\FilesDownloadActivity\Activity\Provider</provider>
+			<provider>OCA\FilesTrackDownloads\Activity\Provider</provider>
 		</providers>
 	</activity>
 </info>

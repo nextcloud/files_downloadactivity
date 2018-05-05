@@ -19,25 +19,25 @@
  *
  */
 
-namespace OCA\FilesDownloadActivity\Tests\AppInfo;
+namespace OCA\FilesTrackDownloads\Tests\AppInfo;
 
 
-use OCA\FilesDownloadActivity\Activity\Listener;
-use OCA\FilesDownloadActivity\Activity\Provider;
-use OCA\FilesDownloadActivity\Activity\Setting;
-use OCA\FilesDownloadActivity\AppInfo\Application;
-use OCA\FilesDownloadActivity\Tests\TestCase;
+use OCA\FilesTrackDownloads\Activity\Listener;
+use OCA\FilesTrackDownloads\Activity\Provider;
+use OCA\FilesTrackDownloads\Activity\Setting;
+use OCA\FilesTrackDownloads\AppInfo\Application;
+use OCA\FilesTrackDownloads\Tests\TestCase;
 use OCP\Activity\IProvider;
 use OCP\Activity\ISetting;
 
 /**
  * Class ApplicationTest
  *
- * @package OCA\FilesDownloadActivity\Tests
+ * @package OCA\FilesTrackDownloads\Tests
  * @group DB
  */
 class ApplicationTest extends TestCase {
-	/** @var \OCA\FilesDownloadActivity\AppInfo\Application */
+	/** @var \OCA\FilesTrackDownloads\AppInfo\Application */
 	protected $app;
 
 	/** @var \OCP\AppFramework\IAppContainer */
@@ -51,7 +51,7 @@ class ApplicationTest extends TestCase {
 
 	public function testContainerAppName() {
 		$this->app = new Application();
-		$this->assertEquals('files_downloadactivity_tk', $this->container->getAppName());
+		$this->assertEquals('files_trackdownloads', $this->container->getAppName());
 	}
 
 	public function dataContainerQuery() {

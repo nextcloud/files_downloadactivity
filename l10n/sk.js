@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity_tk",
+    "files_trackdownloads",
     {
     "Downloaded by {actor} (via desktop)" : "Stiahunté používateľom {actor} (pomocou PC klienta)",
     "Downloaded by {actor} (via app)" : "Stiahunté používateľom {actor} (pomocou aplikácie)",

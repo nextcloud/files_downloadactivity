@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\FilesDownloadActivity\Tests;
+namespace OCA\FilesTrackDownloads\Tests;
 
 abstract class TestCase extends \Test\TestCase {
 }

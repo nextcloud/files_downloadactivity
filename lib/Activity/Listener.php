@@ -19,10 +19,10 @@
  *
  */
 
-namespace OCA\FilesDownloadActivity\Activity;
+namespace OCA\FilesTrackDownloads\Activity;
 
 use OC\Files\Filesystem;
-use OCA\FilesDownloadActivity\CurrentUser;
+use OCA\FilesTrackDownloads\CurrentUser;
 use OCP\Activity\IManager;
 use OCP\Files\Folder;
 use OCP\Files\InvalidPathException;
@@ -122,7 +122,7 @@ class Listener {
 		$timeStamp = time();
 		try {
 			$event = $this->activityManager->generateEvent();
-			$event->setApp('files_downloadactivity_tk')
+			$event->setApp('files_trackdownloads')
 				->setType('file_downloaded')
 				->setAffectedUser($owner)
 				->setAuthor($this->currentUser->getUID())
@@ -133,11 +133,11 @@ class Listener {
 			$this->activityManager->publish($event);
 		} catch (\InvalidArgumentException $e) {
 			$this->logger->logException($e, [
-				'app' => 'files_downloadactivity_tk',
+				'app' => 'files_trackdownloads',
 			]);
 		} catch (\BadMethodCallException $e) {
 			$this->logger->logException($e, [
-				'app' => 'files_downloadactivity_tk',
+				'app' => 'files_trackdownloads',
 			]);
 		}
 
@@ -149,7 +149,7 @@ class Listener {
 
 			try {
 				$event = $this->activityManager->generateEvent();
-				$event->setApp('files_downloadactivity_tk')
+				$event->setApp('files_trackdownloads')
 					->setType('file_downloaded')
 					->setAffectedUser($admin->getUID())
 					->setAuthor($this->currentUser->getUID())
@@ -160,11 +160,11 @@ class Listener {
 				$this->activityManager->publish($event);
 			} catch (\InvalidArgumentException $e) {
 				$this->logger->logException($e, [
-					'app' => 'files_downloadactivity_tk',
+					'app' => 'files_trackdownloads',
 				]);
 			} catch (\BadMethodCallException $e) {
 				$this->logger->logException($e, [
-					'app' => 'files_downloadactivity_tk',
+					'app' => 'files_trackdownloads',
 				]);
 			}
 		}

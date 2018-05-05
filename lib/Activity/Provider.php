@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\FilesDownloadActivity\Activity;
+namespace OCA\FilesTrackDownloads\Activity;
 
 use OCP\Activity\IEvent;
 use OCP\Activity\IEventMerger;
@@ -84,11 +84,11 @@ class Provider implements IProvider {
 	 * @since 11.0.0
 	 */
 	public function parse($language, IEvent $event, IEvent $previousEvent = null) {
-		if ($event->getApp() !== 'files_downloadactivity_tk') {
+		if ($event->getApp() !== 'files_trackdownloads') {
 			throw new \InvalidArgumentException();
 		}
 
-		$this->l = $this->languageFactory->get('files_downloadactivity_tk', $language);
+		$this->l = $this->languageFactory->get('files_trackdownloads', $language);
 		if (method_exists($this->activityManager, 'getRequirePNG') && $this->activityManager->getRequirePNG()) {
 			$event->setIcon($this->url->getAbsoluteURL($this->url->imagePath('core', 'actions/share.png')));
 		} else {

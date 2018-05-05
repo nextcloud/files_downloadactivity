@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity_tk",
+    "files_trackdownloads",
     {
     "Downloaded by {actor} (via desktop)" : "Λήψη από {χρήστη} (μέσω επιφάνειας εργασίας)",
     "Downloaded by {actor} (via app)" : "Λήψη από {actor} (μέσω εφαρμογής)",

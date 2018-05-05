@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\FilesDownloadActivity\Activity;
+namespace OCA\FilesTrackDownloads\Activity;
 
 
 use OCP\Activity\ISetting;

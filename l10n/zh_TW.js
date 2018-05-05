@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity_tk",
+    "files_trackdownloads",
     {
     "Downloaded by {actor} (via desktop)" : "已被 {actor} 下載（透過桌面客戶端）",
     "Downloaded by {actor} (via app)" : "已被 {actor} 下載（透過手機應用程式）",

@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "files_downloadactivity_tk",
+    "files_trackdownloads",
     {
     "Downloaded by {actor} (via desktop)" : "הורד על ידי {actor} (דרך המחשב השולחני)",
     "Downloaded by {actor} (via app)" : "הורד על ידי {actor} (דרך היישומון)",
