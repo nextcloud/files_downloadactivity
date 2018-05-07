@@ -8,7 +8,7 @@
 
 	<category>files</category>
 	<category>monitoring</category>
-	<screenshot>https://raw.githubusercontent.com/nextcloud/files_trackdownloads/master/docs/screenshot.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/TimoKunze/files_trackdownloads/master/docs/screenshot.png</screenshot>
 
 	<website>https://github.com/timokunze/files_trackdownloads</website>
 	<bugs>https://github.com/timokunze/files_trackdownloads/issues</bugs>
