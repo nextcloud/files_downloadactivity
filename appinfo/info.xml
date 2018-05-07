@@ -2,7 +2,7 @@
 <info>
 	<id>files_trackdownloads</id>
 	<name>Activities for shared file downloads, visible to all admins</name>
-	<description>Creates activities (visible to any administrator) for downloads of files that were shared with other users or a group. This app is based on the Download Activity app by Joas Schilling</description>
+	<description>Creates activities (visible to any administrator) for downloads of files that were shared with other users or a group.</description>
 	<licence>AGPL</licence>
 	<author>Joas Schilling, Timo Kunze</author>
 
@@ -14,7 +14,7 @@
 	<bugs>https://github.com/timokunze/files_trackdownloads/issues</bugs>
 	<repository>https://github.com/timokunze/files_trackdownloads</repository>
 
-	<version>1.2.1</version>
+	<version>1.2.2</version>
 	<namespace>FilesTrackDownloads</namespace>
 
 	<types>
