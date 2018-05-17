@@ -11,5 +11,5 @@
     "Downloaded by {actor} (via web)" : "გადმოწერა {actor} მომხმარებელმა (ვებით)",
     "Shared file {file} was downloaded by {actor} via the mobile client" : "გაზიარებული ფაილი {file} მობილური კლიენტთით გადმოწერილ იქნა {actor} მომხმარებლის მიერ",
     "Shared file {file} was downloaded by {actor} via the web interface" : "გაზიარებული ფაილი {file} ვებ ინტერფეისით გადმოწერილ იქნა {actor} მომხმარებლის მიერ"
-},"pluralForm" :"nplurals=1; plural=0;"
+},"pluralForm" :"nplurals=2; plural=(n==1);"
 }
