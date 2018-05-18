@@ -14,4 +14,4 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile client" : "Sdílený soubor {file} byl stažen {actor} skrze mobilního klienta",
     "Shared file {file} was downloaded by {actor} via the web interface" : "Sdílený soubor {file} byl stažen {actor} skrze webové rozhraní"
 },
-"nplurals=4; plural=(n < 10 && n % 1 == 0) ? 1 : (n < 9999 && n >= 10 && n % 1 == 0) ? 3 : (n % 1 != 0) : 4;");
+"nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");
