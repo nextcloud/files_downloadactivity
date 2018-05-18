@@ -11,5 +11,5 @@
     "Downloaded by {actor} (via web)" : "{actor} parsisiuntė per naršyklę",
     "Shared file {file} was downloaded by {actor} via the mobile client" : "{actor} parsisiuntė {file} per mobiliąją programėlę",
     "Shared file {file} was downloaded by {actor} via the web interface" : "{actor} parsisiuntė {file} per naršyklę"
-},"pluralForm" :"nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 1 : (n%10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 3 : n % 1 != 0 ? 4);"
+},"pluralForm" :"nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);"
 }
