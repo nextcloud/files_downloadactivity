@@ -14,4 +14,4 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile client" : "გაზიარებული ფაილი {file} მობილური კლიენტთით გადმოწერილ იქნა {actor} მომხმარებლის მიერ",
     "Shared file {file} was downloaded by {actor} via the web interface" : "გაზიარებული ფაილი {file} ვებ ინტერფეისით გადმოწერილ იქნა {actor} მომხმარებლის მიერ"
 },
-"nplurals=2; plural=(n==1);");
+"nplurals=2; plural=(n!=1);");

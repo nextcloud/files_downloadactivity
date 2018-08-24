@@ -11,5 +11,5 @@
     "Downloaded by {actor} (via web)" : "Stiahunté používateľom {actor} (cez web)",
     "Shared file {file} was downloaded by {actor} via the mobile client" : "Sprístupnený súbor {file} bol stiahnutý používateľom {actor} pomocou mobilnej aplikácie",
     "Shared file {file} was downloaded by {actor} via the web interface" : "Sprístupnený súbor {file} bol stiahnutý používateľom {actor} pomocou web rozhrania"
-},"pluralForm" :"nplurals=4; plural=(n % 1 == 0 ? 4: n==1 ? 1: n % 1 == 0 && n>=2 && n<=4 ? 3);"
+},"pluralForm" :"nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);"
 }

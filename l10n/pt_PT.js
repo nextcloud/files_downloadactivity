@@ -1,17 +1,17 @@
 OC.L10N.register(
     "files_trackdownloads",
     {
-    "Downloaded by {actor} (via desktop)" : "Descarregado por {actor} (via desktop)",
-    "Downloaded by {actor} (via app)" : "Descarregado por {actor} (via app)",
-    "Downloaded by {actor} (via browser)" : "Descarregado por {actor} (via browser)",
-    "Shared file {file} was downloaded by {actor} via the desktop client" : "Ficheiro partilhado {file} foi descarregado por {actor} pelo cliente desktop",
-    "Shared file {file} was downloaded by {actor} via the mobile app" : "Ficheiro partilhado {file} foi descarregado por {actor} através de app móvel",
-    "Shared file {file} was downloaded by {actor} via the browser" : "Ficheiro partilhado {file} foi descarregado por {actor} através de um navegador",
-    "A local shared file or folder was <strong>downloaded</strong>" : "Um ficheiro local partilhado ou uma pasta foram <strong>descarregados</strong>",
-    "Activities for shared file downloads" : "Actividades sobre descarregamento de ficheiros partilhados",
-    "Downloaded by {actor} (via mobile)" : "Descarregado por {actor} (via dispositivo móvel)",
-    "Downloaded by {actor} (via web)" : "Descarregado por {actor} (via web)",
-    "Shared file {file} was downloaded by {actor} via the mobile client" : "O ficheiro partilhado {file} foi descarregado por {actor} através de um cliente móvel",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "O ficheiro partilhado {file} foi descarregado por {actor} através da interface web"
+    "Downloaded by {actor} (via desktop)" : "Transferido por {actor} (via área de trabalho)",
+    "Downloaded by {actor} (via app)" : "Transferido por {actor} (via aplicação)",
+    "Downloaded by {actor} (via browser)" : "Transferido por {actor} (via navegador)",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "O ficheiro partilhado {file} foi transferido por {actor} via cliente da área de trabalho",
+    "Shared file {file} was downloaded by {actor} via the mobile app" : "O ficheiro partilhado {file} foi transferido por {actor} via aplicação móvel",
+    "Shared file {file} was downloaded by {actor} via the browser" : "O ficheiro partilhado {file} foi transferido por {actor} via navegador",
+    "A local shared file or folder was <strong>downloaded</strong>" : "Um ficheiro local partilhado ou pasta foram <strong>transferidos</strong>",
+    "Activities for shared file downloads" : "Atividades para as transferências de ficheiros partilhados",
+    "Downloaded by {actor} (via mobile)" : "Transferido por {actor} (via dispositivo móvel)",
+    "Downloaded by {actor} (via web)" : "Transferido por {actor} (via Web)",
+    "Shared file {file} was downloaded by {actor} via the mobile client" : "O ficheiro partilhado {file} foi transferido por {actor} via cliente móvel",
+    "Shared file {file} was downloaded by {actor} via the web interface" : "O ficheiro partilhado {file} foi transferido por {actor} via interface da Web"
 },
 "nplurals=2; plural=(n != 1);");
