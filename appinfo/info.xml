@@ -14,7 +14,7 @@
 	<bugs>https://github.com/timokunze/files_trackdownloads/issues</bugs>
 	<repository>https://github.com/timokunze/files_trackdownloads</repository>
 
-	<version>1.2.2</version>
+	<version>1.3.0</version>
 	<namespace>FilesTrackDownloads</namespace>
 
 	<types>
@@ -22,7 +22,7 @@
 	</types>
 
 	<dependencies>
-		<nextcloud min-version="13" max-version="14" />
+		<nextcloud min-version="14" max-version="14" />
 	</dependencies>
 
 	<activity>
