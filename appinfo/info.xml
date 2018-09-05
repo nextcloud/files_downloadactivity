@@ -1,25 +1,27 @@
 <?xml version="1.0"?>
-<info>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
 	<id>files_downloadactivity</id>
 	<name>Activities for shared file downloads</name>
+	<summary>Creates activities for downloads of files that were shared with other users or a group</summary>
 	<description>Creates activities for downloads of files that were shared with other users or a group</description>
-	<licence>AGPL</licence>
-	<author>Joas Schilling</author>
-
-	<category>files</category>
-	<category>monitoring</category>
-	<screenshot>https://raw.githubusercontent.com/nextcloud/files_downloadactivity/master/docs/screenshot.png</screenshot>
-
-	<website>https://github.com/nextcloud/files_downloadactivity</website>
-	<bugs>https://github.com/nextcloud/files_downloadactivity/issues</bugs>
-	<repository>https://github.com/nextcloud/files_downloadactivity</repository>
-
 	<version>1.3.0</version>
+	<licence>agpl</licence>
+	<author>Joas Schilling</author>
 	<namespace>FilesDownloadActivity</namespace>
 
 	<types>
 		<filesystem/>
 	</types>
+
+	<category>files</category>
+	<category>monitoring</category>
+
+	<website>https://github.com/nextcloud/files_downloadactivity</website>
+	<bugs>https://github.com/nextcloud/files_downloadactivity/issues</bugs>
+	<repository>https://github.com/nextcloud/files_downloadactivity</repository>
+
+	<screenshot>https://raw.githubusercontent.com/nextcloud/files_downloadactivity/master/docs/screenshot.png</screenshot>
 
 	<dependencies>
 		<nextcloud min-version="14" max-version="14" />
