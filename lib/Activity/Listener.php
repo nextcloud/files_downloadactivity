@@ -110,7 +110,7 @@ class Listener {
           $requestor = $this->currentUser->getUserIdentifier();
         }
         
-		$subjectParams = [[$fileId => $filePath], $this->currentUser->getUserIdentifier(), $client];
+		$subjectParams = [[$fileId => $filePath], $requestor, $client];
 
 		if ($isDir) {
 			$subject = Provider::SUBJECT_SHARED_FOLDER_DOWNLOADED;
