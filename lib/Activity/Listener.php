@@ -102,6 +102,14 @@ class Listener {
 		} else if ($this->request->isUserAgent([IRequest::USER_AGENT_CLIENT_ANDROID, IRequest::USER_AGENT_CLIENT_IOS])) {
 			$client = 'mobile';
 		}
+        
+        // Check if Current User is Guest
+        if ($this->currentUser->getUserIdentifier() === null) {
+          $requestor = 'Anonymous ' . $_SERVER['REMOTE_ADDR'];
+        } else {
+          $requestor = $this->currentUser->getUserIdentifier();
+        }
+        
 		$subjectParams = [[$fileId => $filePath], $this->currentUser->getUserIdentifier(), $client];
 
 		if ($isDir) {
