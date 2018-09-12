@@ -104,7 +104,7 @@ class Listener {
 		}
         
         // Check if Current User is Guest
-        if ($this->currentUser->getUserIdentifier() === null) {
+        if ($this->currentUser->getUserIdentifier() === '') {
           $requestor = 'Anonymous ' . $_SERVER['REMOTE_ADDR'];
         } else {
           $requestor = $this->currentUser->getUserIdentifier();
