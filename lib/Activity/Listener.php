@@ -97,7 +97,14 @@ class Listener {
 		} else if ($this->request->isUserAgent([IRequest::USER_AGENT_CLIENT_ANDROID, IRequest::USER_AGENT_CLIENT_IOS])) {
 			$client = 'mobile';
 		}
-		$subjectParams = [[$fileId => $filePath], $this->currentUser->getUserIdentifier(), $client];
+		
+        	// Check if Current User is Guest
+        	if ($this->currentUser->getUserIdentifier() === '') {
+          		$requestor = 'Anonymous ' . $_SERVER['REMOTE_ADDR'];
+        	} else {
+          		$requestor = $this->currentUser->getUserIdentifier();
+        	}
+		$subjectParams = [[$fileId => $filePath], $requestor, $client];
 
 		if ($isDir) {
 			$subject = Provider::SUBJECT_SHARED_FOLDER_DOWNLOADED;
