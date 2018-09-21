@@ -1,9 +1,9 @@
 OC.L10N.register(
     "files_downloadactivity",
     {
-    "Downloaded by {actor} (via desktop)" : "Stáhl {actor} (skrze desktop)",
-    "Downloaded by {actor} (via app)" : "Stáhl {actor} (skrze aplikaci)",
-    "Downloaded by {actor} (via browser)" : "Stáhl {actor} (skrze prohlížeč)",
+    "Downloaded by {actor} (via desktop)" : "Stáhl(a) si {actor} (prostřednictvím desktopového klienta)",
+    "Downloaded by {actor} (via app)" : "Stáhl(a) si {actor} (prostřednictvím aplikace)",
+    "Downloaded by {actor} (via browser)" : "Stáhl(a) si {actor} (prostřednictvím webového prohlížeče)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Sdílený soubor {file} byl stažen {actor} skrze desktopového klienta",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Sdílený soubor {file} byl stažen {actor} skrze mobilní aplikaci",
     "Shared file {file} was downloaded by {actor} via the browser" : "Sdílený soubor {file} byl stažen {actor} skrze webový prohlížeč",
