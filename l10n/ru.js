@@ -7,7 +7,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the desktop client" : "{actor} скачал «{file}» на настольный ПК",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} скачал опубликованный файл «{file}» используя приложение для мобильных устройств",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} скачал опубликованный файл «{file}» используя браузер",
-    "A local shared file or folder was <strong>downloaded</strong>" : "Общий локальный файл или каталог был <strong>скачан</strong>",
+    "A local shared file or folder was <strong>downloaded</strong>" : "<strong>Скачан</strong> общий локальный файл или папка",
     "Activities for shared file downloads" : "События загрузок опубликованных файлов",
     "Creates activities for downloads of files that were shared with other users or a group" : "Создает действия для загрузки файлов, которые были доступны другим пользователям или группе",
     "Downloaded by {actor} (via mobile)" : "Скачано {actor} (на мобильное устройство)",
