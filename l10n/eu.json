@@ -6,10 +6,6 @@
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{file} partekatutako fitxategia {actor} -k jaitsi du mugikorrentzako app-a erabiliz",
     "Shared file {file} was downloaded by {actor} via the browser" : "{file} partekatutako fitxategia {actor} -k jaitsi du nabigatzailea erabiliz",
     "A local shared file or folder was <strong>downloaded</strong>" : "Publikoki partekatutako fitxategi edo karpeta bat <strong>deskargatu da</strong>",
-    "Activities for shared file downloads" : "Jaitsitako partekatutako fitxategien ekintzak",
-    "Downloaded by {actor} (via mobile)" : "{actor}-k jaitsi du (mobila erabiliz)",
-    "Downloaded by {actor} (via web)" : "{actor}-k jaitsi du (webgunea erabiliz)",
-    "Shared file {file} was downloaded by {actor} via the mobile client" : "{file} partekatutako fitxategia {actor} -k jaitsi du mugikorrentzako bezeroa erabiliz",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "{file} partekatutako fitxategia {actor} -k jaitsi du web interfazea  erabiliz"
+    "Activities for shared file downloads" : "Jaitsitako partekatutako fitxategien ekintzak"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

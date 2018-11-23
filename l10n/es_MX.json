@@ -7,10 +7,6 @@
     "Shared file {file} was downloaded by {actor} via the browser" : "El archivo compartido {file} fue descargado por {actor} vía el navegador",
     "A local shared file or folder was <strong>downloaded</strong>" : "Un archivo o carpeta local compartido fue <strong>descargado</strong>",
     "Activities for shared file downloads" : "Actividades para los archivos compartidos descargados",
-    "Creates activities for downloads of files that were shared with other users or a group" : "Crea actividades y descargas de archivos que fueron compartidos con otros usuarios o un grupo",
-    "Downloaded by {actor} (via mobile)" : "Descargado por {actor} (vía un dispositivo móvil)",
-    "Downloaded by {actor} (via web)" : "Descargado por {actor} (vía el cliente web)",
-    "Shared file {file} was downloaded by {actor} via the mobile client" : "El archivo compartido {file} fue descargado por {actor} vía el cliente móvil",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "El archivo compartido {file} fue descargado por {actor} vía el cliente web"
+    "Creates activities for downloads of files that were shared with other users or a group" : "Crea actividades y descargas de archivos que fueron compartidos con otros usuarios o un grupo"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

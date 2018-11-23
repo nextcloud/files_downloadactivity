@@ -5,8 +5,6 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} baxó'l ficheru compartíu {file} pela aplicación móvil",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} baxó'l ficheru compartíu {file} pel restolador",
     "A local shared file or folder was <strong>downloaded</strong>" : "<strong>Baxóse</strong> un ficheru o carpeta compartíos llocales",
-    "Activities for shared file downloads" : "Actividaes pa les descargues de ficheros compartíos",
-    "Shared file {file} was downloaded by {actor} via the mobile client" : "{actor} baxó'l ficheru compartíu {file} pel veceru móvil",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "{actor} baxó'l ficheru compartíu {file} pela interfaz web"
+    "Activities for shared file downloads" : "Actividaes pa les descargues de ficheros compartíos"
 },
 "nplurals=2; plural=(n != 1);");
