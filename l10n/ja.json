@@ -7,10 +7,6 @@
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} が共有 {file} をブラウザーでダウンロードしました。",
     "A local shared file or folder was <strong>downloaded</strong>" : "ローカル共有フォルダーまたはファイルが<strong>ダウンロード</strong>されました",
     "Activities for shared file downloads" : "共有ファイルのダウンロード状況",
-    "Creates activities for downloads of files that were shared with other users or a group" : "他のユーザーまたはグループと共有されたファイルのダウンロードのためのアクティビティを作成します。",
-    "Downloaded by {actor} (via mobile)" : "{actor} がダウンロード(モバイルで)",
-    "Downloaded by {actor} (via web)" : "{actor} がダウンロード(ブラウザーで)",
-    "Shared file {file} was downloaded by {actor} via the mobile client" : "{actor} が共有 {file} をモバイルクライアントでダウンロードしました。",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "{actor} が共有 {file} をブラウザーでダウンロードしました。"
+    "Creates activities for downloads of files that were shared with other users or a group" : "他のユーザーまたはグループと共有されたファイルのダウンロードのためのアクティビティを作成します。"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

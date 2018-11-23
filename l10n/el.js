@@ -8,10 +8,6 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Το κοινόχρηστο αρχείο {file} ανακτήθηκε από {actor} μέσω της εφαρμογής για κινητά",
     "Shared file {file} was downloaded by {actor} via the browser" : "Το κοινόχρηστο αρχείο {file} λήφθηκε από τον {actor} μέσω του περιηγητή",
     "A local shared file or folder was <strong>downloaded</strong>" : "Ένα τοπικό διαμοιρασμένο αρχείο ή φάκελος έχει <strong>ληφθεί</strong>",
-    "Activities for shared file downloads" : "Δραστηριότητες σχετικά με τις λήψεις κοινόχρηστων αρχείων",
-    "Downloaded by {actor} (via mobile)" : "Λήψη από {χρήστη} (δια μέσω κινητού)",
-    "Downloaded by {actor} (via web)" : "Λήψη από {χρήστη} (δια μέσω ιστού)",
-    "Shared file {file} was downloaded by {actor} via the mobile client" : "Το κοινόχρηστο αρχείο {file} λήφθηκε από τον {actor} μέσω της εφαρμογής για κινητά",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "Το κοινόχρηστο αρχείο {file} λήφθηκε από τον χρήστη {actor} μέσω της γραφικής διασύνδεσης ιστού"
+    "Activities for shared file downloads" : "Δραστηριότητες σχετικά με τις λήψεις κοινόχρηστων αρχείων"
 },
 "nplurals=2; plural=(n != 1);");
