@@ -7,7 +7,6 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the desktop client" : "{actor} parsisiuntė \"{file}\" per darbalaukio klientą",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} parsisiuntė \"{file} per mobiliąją programėlę",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} parsisiuntė \"{file}\" per naršyklę",
-    "A local shared file or folder was <strong>downloaded</strong>" : "Duomenys buvo <strong>parsisiųsti</strong>",
     "Activities for shared file downloads" : "Duomenų parsisiuntimo informacija",
     "Creates activities for downloads of files that were shared with other users or a group" : "Sukuria failų, kurie buvo bendrinami su kitais naudotojais ar grupėmis, atsisiuntimo veiksmus"
 },
