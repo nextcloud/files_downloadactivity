@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{file} partekatutako fitxategia {actor} -k jaitsi du mugikorrentzako app-a erabiliz",
     "Shared file {file} was downloaded by {actor} via the browser" : "{file} partekatutako fitxategia {actor} -k jaitsi du nabigatzailea erabiliz",
     "A local shared file or folder was <strong>downloaded</strong>" : "Publikoki partekatutako fitxategi edo karpeta bat <strong>deskargatu da</strong>",
-    "Activities for shared file downloads" : "Jaitsitako partekatutako fitxategien ekintzak"
+    "Activities for shared file downloads" : "Jaitsitako partekatutako fitxategien ekintzak",
+    "Creates activities for downloads of files that were shared with other users or a group" : "Sortu beste erabiltzaile batzuekin edo taldeekin partekatutako fitxategien deskargarako ekintzak"
 },
 "nplurals=2; plural=(n != 1);");
