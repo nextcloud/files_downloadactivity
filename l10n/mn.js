@@ -8,10 +8,6 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Түгээлцсэн {file}  {actor} хэрэглэгчийн гар утасаар татагдсан.",
     "Shared file {file} was downloaded by {actor} via the browser" : "Түгээлцсэн {file}  {actor} хэрэглэгчийн веб интерфейсээр татагдсан.",
     "A local shared file or folder was <strong>downloaded</strong>" : "Дотоод түгээлцсэн файл эсвэл хавтас амжилттай <strong>татагдлаа</strong>",
-    "Activities for shared file downloads" : "Түгээлцсэн файлын татацуудын үйл ажилгаанууд",
-    "Downloaded by {actor} (via mobile)" : "{actor}  (гар утасаар) -р татагдсан.",
-    "Downloaded by {actor} (via web)" : "{actor} (вебээр) -р татагдсан.",
-    "Shared file {file} was downloaded by {actor} via the mobile client" : "Түгээлцсэн {file}  {actor} хэрэглэгчийн гар утасаар татагдсан.",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "Түгээлцсэн {file}  {actor} хэрэглэгчийн веб интерфейсээр татагдсан."
+    "Activities for shared file downloads" : "Түгээлцсэн файлын татацуудын үйл ажилгаанууд"
 },
 "nplurals=2; plural=(n != 1);");

@@ -9,10 +9,6 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the browser" : "Il file condiviso {file} è stato scaricato da {actor} tramite il browser",
     "A local shared file or folder was <strong>downloaded</strong>" : "Un file o una cartella condiviso localmente è stata <strong>scaricato</strong>",
     "Activities for shared file downloads" : "Attività di scaricamento dei file condivisi",
-    "Creates activities for downloads of files that were shared with other users or a group" : "Crea attività per gli scaricamenti di file che sono stati condivisi con altri utenti o un gruppo",
-    "Downloaded by {actor} (via mobile)" : "Scaricato da {actor} (tramite mobile)",
-    "Downloaded by {actor} (via web)" : "Scaricato da {actor} (tramite web)",
-    "Shared file {file} was downloaded by {actor} via the mobile client" : "Il file condiviso {file} è stato scaricato da {actor} tramite il client mobile",
-    "Shared file {file} was downloaded by {actor} via the web interface" : "Il file condiviso {file} è stato scaricato da {actor} tramite l'interfaccia web"
+    "Creates activities for downloads of files that were shared with other users or a group" : "Crea attività per gli scaricamenti di file che sono stati condivisi con altri utenti o un gruppo"
 },
 "nplurals=2; plural=(n != 1);");
