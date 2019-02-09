@@ -6,6 +6,7 @@
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Współdzielony plik {file} został pobrany przez {actor} za pomocą aplikacji mobilnej",
     "Shared file {file} was downloaded by {actor} via the browser" : "Współdzielony plik {file} został pobrany przez {actor} za pomocą przeglądarki",
     "A local shared file or folder was <strong>downloaded</strong>" : "Udostępniony plik lub folder lokalny został <strong>pobrany</strong>",
-    "Activities for shared file downloads" : "Aktywność pobrań współdzielonego pliku"
+    "Activities for shared file downloads" : "Aktywność pobrań współdzielonego pliku",
+    "Creates activities for downloads of files that were shared with other users or a group" : "Gromadzi informacje związane z pobieraniem plików udostępnionych innym użytkownikom lub grupie"
 },"pluralForm" :"nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);"
 }
