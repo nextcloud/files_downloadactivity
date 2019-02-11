@@ -2,7 +2,11 @@
     "Downloaded by {actor} (via desktop)" : "הורד על ידי {actor} (דרך המחשב השולחני)",
     "Downloaded by {actor} (via app)" : "הורד על ידי {actor} (דרך היישומון)",
     "Downloaded by {actor} (via browser)" : "הורד על ידי {actor} (דרך הדפדפן)",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "הקובץ המשותף {file} נשלח אל {actor} לפי דרישה בעזרת הלקוח לשולחן העבודה",
+    "Shared file {file} was downloaded by {actor} via the mobile app" : "הקובץ המשותף {file} נשלח אל {actor} לפי דרישה בעזרת היישומון לנייד",
+    "Shared file {file} was downloaded by {actor} via the browser" : "הקובץ המשותף {file} נשלח אל {actor} לפי דרישה בעזרת הדפדפן",
     "A local shared file or folder was <strong>downloaded</strong>" : "קובץ או תיקייה ששותפו מקומית <strong>הורדו</strong>",
-    "Activities for shared file downloads" : "פעילויות להורדות קבצים משותפים"
+    "Activities for shared file downloads" : "פעילויות להורדות קבצים משותפים",
+    "Creates activities for downloads of files that were shared with other users or a group" : "יוצר פעילויות להורדת קבצים ששותפו עם משתמשים או קבוצות אחרים"
 },"pluralForm" :"nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;"
 }
