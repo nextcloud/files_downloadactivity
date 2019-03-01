@@ -7,7 +7,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Współdzielony plik {file} został pobrany przez {actor} przez klienta desktopowego",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Współdzielony plik {file} został pobrany przez {actor} za pomocą aplikacji mobilnej",
     "Shared file {file} was downloaded by {actor} via the browser" : "Współdzielony plik {file} został pobrany przez {actor} za pomocą przeglądarki",
-    "A local shared file or folder was <strong>downloaded</strong>" : "Udostępniony plik lub folder lokalny został <strong>pobrany</strong>",
+    "A local shared file or folder was <strong>downloaded</strong>" : "Współdzielony plik lub folder lokalny został <strong>pobrany</strong>",
     "Activities for shared file downloads" : "Aktywność pobrań współdzielonego pliku",
     "Creates activities for downloads of files that were shared with other users or a group" : "Gromadzi informacje związane z pobieraniem plików udostępnionych innym użytkownikom lub grupie"
 },
