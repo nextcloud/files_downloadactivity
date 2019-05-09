@@ -2,7 +2,7 @@ OC.L10N.register(
     "files_trackdownloads",
     {
     "Downloaded by {actor} (via desktop)" : "Lastet ned av {actor} (via skrivebordsprogram)",
-    "Downloaded by {actor} (via app)" : "Nedlastet av {actor} (via program)",
+    "Downloaded by {actor} (via app)" : "Nedlastet av {actor} (via app)",
     "Downloaded by {actor} (via browser)" : "Nedlastet av {actor} (via nettleser)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Delt fil {file} ble lastet ned av {actor} via skrivebordsklienten",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Den delte filen {file} ble lastet ned av {actor} via mobilappen",
