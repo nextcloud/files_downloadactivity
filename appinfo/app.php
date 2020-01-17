@@ -19,5 +19,5 @@
  *
  */
 
-$application = new \OCA\FilesDownloadActivity\AppInfo\Application();
+$application = \OC::$server->query(\OCA\FilesDownloadActivity\AppInfo\Application::class);
 $application->register();
