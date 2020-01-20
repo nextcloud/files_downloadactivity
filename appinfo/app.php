@@ -19,5 +19,5 @@
  *
  */
 
-$application = new \OCA\FilesTrackDownloads\AppInfo\Application();
+$application = \OC::$server->query(\OCA\FilesTrackDownloads\AppInfo\Application::class);
 $application->register();
