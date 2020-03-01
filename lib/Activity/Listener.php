@@ -102,14 +102,14 @@ class Listener {
 		} else if ($this->request->isUserAgent([IRequest::USER_AGENT_CLIENT_ANDROID, IRequest::USER_AGENT_CLIENT_IOS])) {
 			$client = 'mobile';
 		}
-        
-        // Check if Current User is Guest
-        if ($this->currentUser->getUserIdentifier() === '') {
-          $requestor = 'Anonymous ' . $_SERVER['REMOTE_ADDR'];
-        } else {
-          $requestor = $this->currentUser->getUserIdentifier();
-        }
-        
+
+		// Check if Current User is Guest
+		if ($this->currentUser->getUserIdentifier() === '') {
+			$requestor = 'Anonymous ' . $_SERVER['REMOTE_ADDR'];
+		} else {
+			$requestor = $this->currentUser->getUserIdentifier() . ' (IP: ' . $_SERVER['REMOTE_ADDR'] . ')';
+		}
+
 		$subjectParams = [[$fileId => $filePath], $requestor, $client];
 
 		if ($isDir) {
@@ -161,7 +161,7 @@ class Listener {
 					->setType('file_downloaded')
 					->setAffectedUser($admin->getUID())
 					->setAuthor($this->currentUser->getUID())
-					->setTimestamp(time())
+					->setTimestamp($timeStamp)
 					->setSubject($subject, $subjectParams)
 					->setObject('files', $fileId, $filePath)
 					->setLink($this->urlGenerator->linkToRouteAbsolute('files.view.index', $linkData));
