@@ -23,7 +23,10 @@ namespace OCA\FilesDownloadActivity\AppInfo;
 
 use OCA\FilesDownloadActivity\Activity\Listener;
 use OCP\AppFramework\App;
+use OCP\Files\File;
+use OCP\IPreview;
 use OCP\Util;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 class Application extends App {
 
@@ -36,6 +39,14 @@ class Application extends App {
 	 */
 	public function register() {
 		Util::connectHook('OC_Filesystem', 'read', $this, 'listenReadFile');
+
+		$eventDispatcher = $this->getContainer()->getServer()->getEventDispatcher();
+		$eventDispatcher->addListener(
+			IPreview::EVENT,
+			function (GenericEvent $event) {
+				$this->listenPreviewFile($event);
+			}
+		);
 	}
 
 	/**
@@ -45,5 +56,34 @@ class Application extends App {
 		/** @var Listener $hooks */
 		$hooks = $this->getContainer()->query(Listener::class);
 		$hooks->readFile($params['path']);
+	}
+
+	/**
+	 * @param GenericEvent $event
+	 */
+	public function listenPreviewFile(GenericEvent $event) {
+		$details = $event->getArguments();
+		if ($details['width'] <= 150 && $details['height'] <= 150) {
+			// Ignore mini preview, but we need "big" previews because of the viewer app.
+			return;
+		}
+
+		/** @var File $file */
+		$file = $event->getSubject();
+
+		if (substr_count($file->getPath(), '/') < 3) {
+			// Invalid path
+			return;
+		}
+
+		[,, $filesApp, $path] = explode('/', $file->getPath(), 4);
+
+		if ($filesApp !== 'files') {
+			return;
+		}
+
+		/** @var Listener $hooks */
+		$hooks = $this->getContainer()->query(Listener::class);
+		$hooks->readFile($path);
 	}
 }
