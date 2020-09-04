@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * @copyright Copyright (c) 2016 Joas Schilling <coding@schilljs.com>
  *
@@ -23,24 +25,29 @@ namespace OCA\FilesDownloadActivity\AppInfo;
 
 use OCA\FilesDownloadActivity\Activity\Listener;
 use OCP\AppFramework\App;
+use OCP\AppFramework\Bootstrap\IBootContext;
+use OCP\AppFramework\Bootstrap\IBootstrap;
+use OCP\AppFramework\Bootstrap\IRegistrationContext;
 use OCP\Files\File;
 use OCP\IPreview;
 use OCP\Util;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
-class Application extends App {
+class Application extends App implements IBootstrap {
+
+	public const APP_ID = 'files_downloadactivity';
 
 	public function __construct() {
-		parent::__construct('files_downloadactivity');
+		parent::__construct(self::APP_ID);
 	}
 
-	/**
-	 * Register all hooks and listeners
-	 */
-	public function register() {
+	public function register(IRegistrationContext $context): void {
+	}
+
+	public function boot(IBootContext $context): void {
 		Util::connectHook('OC_Filesystem', 'read', $this, 'listenReadFile');
 
-		$eventDispatcher = $this->getContainer()->getServer()->getEventDispatcher();
+		$eventDispatcher = $context->getServerContainer()->getEventDispatcher();
 		$eventDispatcher->addListener(
 			IPreview::EVENT,
 			function (GenericEvent $event) {
@@ -52,7 +59,7 @@ class Application extends App {
 	/**
 	 * @param array $params
 	 */
-	public function listenReadFile($params) {
+	public function listenReadFile(array $params): void {
 		/** @var Listener $hooks */
 		$hooks = $this->getContainer()->query(Listener::class);
 		$hooks->readFile($params['path']);
@@ -61,7 +68,7 @@ class Application extends App {
 	/**
 	 * @param GenericEvent $event
 	 */
-	public function listenPreviewFile(GenericEvent $event) {
+	public function listenPreviewFile(GenericEvent $event): void {
 		$details = $event->getArguments();
 		if ($details['width'] <= 150 && $details['height'] <= 150) {
 			// Ignore mini preview, but we need "big" previews because of the viewer app.

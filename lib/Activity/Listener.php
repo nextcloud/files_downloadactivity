@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * @copyright Copyright (c) 2016 Joas Schilling <coding@schilljs.com>
  *
@@ -67,7 +69,7 @@ class Listener {
 	 * Store the update hook events
 	 * @param string $path Path of the file that has been read
 	 */
-	public function readFile($path) {
+	public function readFile(string $path): void {
 		// Do not add activities for .part-files
 		if (substr($path, -5) === '.part') {
 			return;
@@ -79,7 +81,7 @@ class Listener {
 		}
 
 		try {
-			list($filePath, $owner, $fileId, $isDir) = $this->getSourcePathAndOwner($path);
+			[$filePath, $owner, $fileId, $isDir] = $this->getSourcePathAndOwner($path);
 		} catch (NotFoundException $e) {
 			return;
 		} catch (InvalidPathException $e) {
@@ -142,7 +144,7 @@ class Listener {
 	 * @throws NotFoundException
 	 * @throws InvalidPathException
 	 */
-	protected function getSourcePathAndOwner($path) {
+	protected function getSourcePathAndOwner(string $path): array {
 		$currentUserId = $this->currentUser->getUID();
 		$userFolder = $this->rootFolder->getUserFolder($currentUserId);
 		$node = $userFolder->get($path);
