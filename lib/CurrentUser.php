@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * @copyright Copyright (c) 2016 Joas Schilling <coding@schilljs.com>
  *
@@ -21,11 +23,10 @@
 
 namespace OCA\FilesDownloadActivity;
 
-
 use OCP\IRequest;
 use OCP\IUser;
 use OCP\IUserSession;
-use OCP\Share;
+use OCP\Share\IShare;
 use OCP\Share\Exceptions\ShareNotFound;
 use OCP\Share\IManager;
 
@@ -59,7 +60,7 @@ class CurrentUser {
 	 * Get an identifier for the user, session or token
 	 * @return string
 	 */
-	public function getUserIdentifier() {
+	public function getUserIdentifier(): string {
 		if ($this->identifier === null) {
 			$this->identifier = $this->getUID();
 
@@ -80,7 +81,7 @@ class CurrentUser {
 	 * Get the current user from the session
 	 * @return string|null
 	 */
-	public function getUID() {
+	public function getUID(): ?string {
 		if ($this->sessionUser === false) {
 			$user = $this->userSession->getUser();
 			if ($user instanceof IUser) {
@@ -97,12 +98,12 @@ class CurrentUser {
 	 * Get the cloud ID from the sharing token
 	 * @return string|null
 	 */
-	protected function getCloudIDFromToken() {
+	protected function getCloudIDFromToken(): ?string {
 		if (!empty($this->request->server['PHP_AUTH_USER'])) {
 			$token = $this->request->server['PHP_AUTH_USER'];
 			try {
 				$share = $this->shareManager->getShareByToken($token);
-				if ($share->getShareType() === Share::SHARE_TYPE_REMOTE) {
+				if ($share->getShareType() === IShare::TYPE_REMOTE) {
 					return $share->getSharedWith();
 				}
 			} catch (ShareNotFound $e) {

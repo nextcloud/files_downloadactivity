@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * @copyright Copyright (c) 2016 Joas Schilling <coding@schilljs.com>
  *
@@ -83,7 +85,7 @@ class Provider implements IProvider {
 	 * @throws \InvalidArgumentException
 	 * @since 11.0.0
 	 */
-	public function parse($language, IEvent $event, IEvent $previousEvent = null) {
+	public function parse($language, IEvent $event, IEvent $previousEvent = null): IEvent {
 		if ($event->getApp() !== 'files_downloadactivity') {
 			throw new \InvalidArgumentException();
 		}
@@ -108,12 +110,12 @@ class Provider implements IProvider {
 
 	/**
 	 * @param IEvent $event
-	 * @param IEvent $previousEvent
+	 * @param IEvent|null $previousEvent
 	 * @return IEvent
 	 * @throws \InvalidArgumentException
 	 * @since 11.0.0
 	 */
-	public function parseShortVersion(IEvent $event, IEvent $previousEvent = null) {
+	public function parseShortVersion(IEvent $event, IEvent $previousEvent = null): IEvent {
 		$parsedParameters = $this->getParsedParameters($event);
 		$params = $event->getSubjectParameters();
 
@@ -137,12 +139,12 @@ class Provider implements IProvider {
 
 	/**
 	 * @param IEvent $event
-	 * @param IEvent $previousEvent
+	 * @param IEvent|null $previousEvent
 	 * @return IEvent
 	 * @throws \InvalidArgumentException
 	 * @since 11.0.0
 	 */
-	public function parseLongVersion(IEvent $event, IEvent $previousEvent = null) {
+	public function parseLongVersion(IEvent $event, IEvent $previousEvent = null): IEvent {
 		$parsedParameters = $this->getParsedParameters($event);
 		$params = $event->getSubjectParameters();
 
@@ -175,7 +177,7 @@ class Provider implements IProvider {
 	 * @param array $parameters
 	 * @throws \InvalidArgumentException
 	 */
-	protected function setSubjects(IEvent $event, $subject, array $parameters) {
+	protected function setSubjects(IEvent $event, string $subject, array $parameters): void {
 		$placeholders = $replacements = [];
 		foreach ($parameters as $placeholder => $parameter) {
 			$placeholders[] = '{' . $placeholder . '}';
@@ -190,7 +192,7 @@ class Provider implements IProvider {
 			->setRichSubject($subject, $parameters);
 	}
 
-	protected function getParsedParameters(IEvent $event) {
+	protected function getParsedParameters(IEvent $event): array {
 		$subject = $event->getSubject();
 		$parameters = $event->getSubjectParameters();
 
@@ -199,7 +201,7 @@ class Provider implements IProvider {
 			case self::SUBJECT_SHARED_FILE_DOWNLOADED:
 				$id = key($parameters[0]);
 				return [
-					'file' => $this->generateFileParameter($id, $parameters[0][$id]),
+					'file' => $this->generateFileParameter((int) $id, $parameters[0][$id]),
 					'actor' => $this->generateUserParameter($parameters[1]),
 				];
 		}
@@ -211,7 +213,7 @@ class Provider implements IProvider {
 	 * @param string $path
 	 * @return array
 	 */
-	protected function generateFileParameter($id, $path) {
+	protected function generateFileParameter(int $id, string $path): array {
 		return [
 			'type' => 'file',
 			'id' => $id,
@@ -225,7 +227,7 @@ class Provider implements IProvider {
 	 * @param string $uid
 	 * @return array
 	 */
-	protected function generateUserParameter($uid) {
+	protected function generateUserParameter(string $uid): array {
 		if (!isset($this->displayNames[$uid])) {
 			$this->displayNames[$uid] = $this->getDisplayName($uid);
 		}
@@ -241,12 +243,12 @@ class Provider implements IProvider {
 	 * @param string $uid
 	 * @return string
 	 */
-	protected function getDisplayName($uid) {
+	protected function getDisplayName(string $uid): string {
 		$user = $this->userManager->get($uid);
 		if ($user instanceof IUser) {
 			return $user->getDisplayName();
-		} else {
-			return $uid;
 		}
+
+		return $uid;
 	}
 }
