@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Споделен файл {file} беше изтеглен от {actor} чрез мобилно приложение",
     "Shared file {file} was downloaded by {actor} via the browser" : "Споделен файл {file} беше изтеглен от {actor} чрез браузър",
     "A local shared file or folder was <strong>downloaded</strong>" : "Локален споделен файл или папка беше<strong>свален</strong>",
-    "Activities for shared file downloads" : "Активности за изтегляния на споделени файлове"
+    "Activities for shared file downloads" : "Активности за изтегляния на споделени файлове",
+    "Creates activities for downloads of files that were shared with other users or a group" : "Създава активности за изтегляне на файлове, които споделени с други потребители или група"
 },
 "nplurals=2; plural=(n != 1);");
