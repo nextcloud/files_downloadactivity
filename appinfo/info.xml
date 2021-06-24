@@ -5,7 +5,7 @@
 	<name>Activities for shared file downloads</name>
 	<summary>Creates activities for downloads of files that were shared with other users or a group</summary>
 	<description>Creates activities for downloads of files that were shared with other users or a group</description>
-	<version>1.11.0</version>
+	<version>1.12.0</version>
 	<licence>agpl</licence>
 	<author>Joas Schilling</author>
 	<namespace>FilesDownloadActivity</namespace>
@@ -24,7 +24,7 @@
 	<screenshot>https://raw.githubusercontent.com/nextcloud/files_downloadactivity/master/docs/screenshot.png</screenshot>
 
 	<dependencies>
-		<nextcloud min-version="22" max-version="22" />
+		<nextcloud min-version="23" max-version="23" />
 	</dependencies>
 
 	<activity>
