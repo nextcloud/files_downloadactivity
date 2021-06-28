@@ -59,8 +59,8 @@ class Provider implements IProvider {
 	/** @var string */
 	protected $lastType = '';
 
-	const SUBJECT_SHARED_FILE_DOWNLOADED = 'shared_file_downloaded';
-	const SUBJECT_SHARED_FOLDER_DOWNLOADED = 'shared_folder_downloaded';
+	public const SUBJECT_SHARED_FILE_DOWNLOADED = 'shared_file_downloaded';
+	public const SUBJECT_SHARED_FOLDER_DOWNLOADED = 'shared_folder_downloaded';
 
 	/**
 	 * @param IFactory $languageFactory
@@ -121,7 +121,7 @@ class Provider implements IProvider {
 
 		if ($params[2] === 'desktop') {
 			$subject = $this->l->t('Downloaded by {actor} (via desktop)');
-		} else if ($params[2] === 'mobile') {
+		} elseif ($params[2] === 'mobile') {
 			$subject = $this->l->t('Downloaded by {actor} (via app)');
 		} else {
 			$subject = $this->l->t('Downloaded by {actor} (via browser)');
@@ -150,7 +150,7 @@ class Provider implements IProvider {
 
 		if ($params[2] === 'desktop') {
 			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the desktop client');
-		} else if ($params[2] === 'mobile') {
+		} elseif ($params[2] === 'mobile') {
 			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the mobile app');
 		} else {
 			$subject = $this->l->t('Shared file {file} was downloaded by {actor} via the browser');

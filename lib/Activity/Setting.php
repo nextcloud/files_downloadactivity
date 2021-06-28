@@ -23,7 +23,6 @@ declare(strict_types=1);
 
 namespace OCA\FilesDownloadActivity\Activity;
 
-
 use OCP\Activity\ISetting;
 use OCP\IL10N;
 
@@ -97,4 +96,3 @@ class Setting implements ISetting {
 		return false;
 	}
 }
-

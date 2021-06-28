@@ -21,7 +21,6 @@
 
 namespace OCA\FilesDownloadActivity\Tests\AppInfo;
 
-
 use OCA\FilesDownloadActivity\Activity\Listener;
 use OCA\FilesDownloadActivity\Activity\Provider;
 use OCA\FilesDownloadActivity\Activity\Setting;
