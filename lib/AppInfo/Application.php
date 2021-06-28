@@ -34,7 +34,6 @@ use OCP\Util;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
 class Application extends App implements IBootstrap {
-
 	public const APP_ID = 'files_downloadactivity';
 
 	public function __construct() {

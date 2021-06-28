@@ -96,7 +96,7 @@ class Listener {
 		$client = 'web';
 		if ($this->request->isUserAgent([IRequest::USER_AGENT_CLIENT_DESKTOP])) {
 			$client = 'desktop';
-		} else if ($this->request->isUserAgent([IRequest::USER_AGENT_CLIENT_ANDROID, IRequest::USER_AGENT_CLIENT_IOS])) {
+		} elseif ($this->request->isUserAgent([IRequest::USER_AGENT_CLIENT_ANDROID, IRequest::USER_AGENT_CLIENT_IOS])) {
 			$client = 'mobile';
 		}
 		$subjectParams = [[$fileId => $filePath], $this->currentUser->getUserIdentifier(), $client];
