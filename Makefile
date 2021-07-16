@@ -26,18 +26,21 @@ appstore: clean
 	mkdir -p $(sign_dir)
 	rsync -a \
 	--exclude=/build \
+	--exclude=composer.json \
+	--exclude=composer.lock \
 	--exclude=docs \
-	--exclude=.drone.yml \
 	--exclude=.git \
 	--exclude=.github \
 	--exclude=.gitignore \
 	--exclude=l10n/no-php \
 	--exclude=.tx \
 	--exclude=Makefile \
+	--exclude=.php_cs.cache \
+	--exclude=.php_cs.dist \
+	--exclude=psalm.xml \
 	--exclude=README.md \
-	--exclude=.scrutinizer.yml \
 	--exclude=tests \
-	--exclude=.travis.yml \
+	--exclude=vendor \
 	$(project_dir)/  $(sign_dir)/$(app_name)
 	@if [ -f $(cert_dir)/$(app_name).key ]; then \
 		echo "Signing app files…"; \
