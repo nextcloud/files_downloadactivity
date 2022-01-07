@@ -1,7 +1,7 @@
 { "translations": {
-    "Downloaded by {actor} (via desktop)" : "{actor} prejme predmet (prek namiznega odjemalca)",
-    "Downloaded by {actor} (via app)" : "{actor} prejme predmet (prek prenosne naprave)",
-    "Downloaded by {actor} (via browser)" : "{actor} prejme predmet (prek spletnega brskalnika)",
+    "Downloaded by {actor} (via desktop)" : "{actor} prejme predmet (po namiznem odjemalcu)",
+    "Downloaded by {actor} (via app)" : "{actor} prejme predmet (s prenosno napravo)",
+    "Downloaded by {actor} (via browser)" : "{actor} prejme predmet (s spletnega brskalnika)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "{actor} prejme dokument {file} v skupni rabi prek namiznega odjemalca.",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} prejme dokument {file} v skupni rabi prek mobilne naprave.",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} prejme dokument {file} v skupni rabi prek spletnega brskalnika.",
