@@ -1,7 +1,7 @@
 OC.L10N.register(
     "files_downloadactivity",
     {
-    "Downloaded by {actor} (via desktop)" : "Έγινε λήψη από {actor} (μέσω προσωπικού υπολογιστής)",
+    "Downloaded by {actor} (via desktop)" : "Έγινε λήψη από {actor} (μέσω προσωπικού υπολογιστή)",
     "Downloaded by {actor} (via app)" : "Έγινε λήψη από {actor} (μέσω εφαρμογής)",
     "Downloaded by {actor} (via browser)" : "Έγινε λήψη από {actor} (μέσω περιηγητή)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Το κοινόχρηστο αρχείο {file} λήφθηκε από τον {actor} μέσω του προγράμματος-πελάτη επιφάνειας εργασίας",
