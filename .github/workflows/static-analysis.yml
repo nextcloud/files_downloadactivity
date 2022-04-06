@@ -24,3 +24,15 @@ jobs:
             run: composer require --dev christophwurst/nextcloud:${{ matrix.ocp-version }}
           - name: Run coding standards check
             run: composer run psalm
+
+  summary:
+    runs-on: ubuntu-latest
+    needs: static-psalm-analysis
+
+    if: always()
+
+    name: static-psalm-analysis-summary
+
+    steps:
+      - name: Summary status
+        run: if ${{ needs.static-psalm-analysis.result != 'success' }}; then exit 1; fi
