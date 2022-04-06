@@ -6,8 +6,10 @@ jobs:
   static-psalm-analysis:
       runs-on: ubuntu-latest
       strategy:
+          # do not stop on another job's failure
+          fail-fast: false
           matrix:
-              ocp-version: [ 'dev-master', 'dev-stable23', 'dev-stable22', 'dev-stable21' ]
+              ocp-version: [ 'dev-master', 'dev-stable23', 'dev-stable22' ]
       name: Nextcloud ${{ matrix.ocp-version }}
       steps:
           - name: Checkout
@@ -21,6 +23,18 @@ jobs:
           - name: Install dependencies
             run: composer i
           - name: Install dependencies
-            run: composer require --dev christophwurst/nextcloud:${{ matrix.ocp-version }}
+            run: composer require --dev christophwurst/nextcloud:${{ matrix.ocp-version }} --ignore-platform-reqs
           - name: Run coding standards check
             run: composer run psalm
+
+  summary:
+    runs-on: ubuntu-latest
+    needs: static-psalm-analysis
+
+    if: always()
+
+    name: static-psalm-analysis-summary
+
+    steps:
+      - name: Summary status
+        run: if ${{ needs.static-psalm-analysis.result != 'success' }}; then exit 1; fi

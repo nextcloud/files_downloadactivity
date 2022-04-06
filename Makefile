@@ -35,8 +35,8 @@ appstore: clean
 	--exclude=l10n/no-php \
 	--exclude=.tx \
 	--exclude=Makefile \
-	--exclude=.php_cs.cache \
-	--exclude=.php_cs.dist \
+	--exclude=.php-cs-fixer.cache \
+	--exclude=.php-cs-fixer.dist.php \
 	--exclude=psalm.xml \
 	--exclude=README.md \
 	--exclude=tests \
