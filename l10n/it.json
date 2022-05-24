@@ -8,5 +8,5 @@
     "A local shared file or folder was <strong>downloaded</strong>" : "Un file o una cartella condiviso localmente è stata <strong>scaricato</strong>",
     "Activities for shared file downloads" : "Attività di scaricamento dei file condivisi",
     "Creates activities for downloads of files that were shared with other users or a group" : "Crea attività per gli scaricamenti di file che sono stati condivisi con altri utenti o un gruppo"
-},"pluralForm" :"nplurals=2; plural=(n != 1);"
+},"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }

@@ -11,4 +11,4 @@ OC.L10N.register(
     "Activities for shared file downloads" : "Attività di scaricamento dei file condivisi",
     "Creates activities for downloads of files that were shared with other users or a group" : "Crea attività per gli scaricamenti di file che sono stati condivisi con altri utenti o un gruppo"
 },
-"nplurals=2; plural=(n != 1);");
+"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
