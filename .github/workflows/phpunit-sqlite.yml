@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      matrix::
+      matrix:
         php-versions: ["7.4", "8.0"]
         server-versions: ["master", "stable25", "stable24", "stable23"]
         include:
