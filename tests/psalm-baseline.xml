@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.7.0@d4377c0baf3ffbf0b1ec6998e8d1be2a40971005">
+<files psalm-version="4.28.0@52e96bea381e6cb07a672aefec791a5817694a26">
   <file src="lib/Activity/Listener.php">
     <MissingDependency occurrences="3">
       <code>$this-&gt;rootFolder</code>
@@ -11,10 +11,6 @@
     </UndefinedClass>
   </file>
   <file src="lib/CurrentUser.php">
-    <InvalidCatch occurrences="1"/>
-    <MissingDependency occurrences="1">
-      <code>ShareNotFound</code>
-    </MissingDependency>
     <NoInterfaceProperties occurrences="1">
       <code>$this-&gt;request-&gt;server</code>
     </NoInterfaceProperties>
