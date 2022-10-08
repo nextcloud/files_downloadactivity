@@ -1,25 +1,26 @@
 {
 	"autoload-dev": {
 		"psr-4": {
-			"OCP\\": "vendor/christophwurst/nextcloud/OCP",
-			"OCA\\Notifications\\": "lib/"
+			"OCP\\": "vendor/nextcloud/ocp/OCP",
+			"OCA\\FilesDownloadActivity\\": "lib/"
 		}
 	},
-	"name": "nextcloud/notifications",
-	"description": "notifications",
+	"name": "nextcloud/files_downloadactivity",
+	"description": "Creates activities for downloads of files that were shared with other users or a group",
 	"license": "AGPL",
 	"require-dev": {
 		"nextcloud/coding-standard": "^1.0.0",
-		"christophwurst/nextcloud": "dev-stable22",
-		"vimeo/psalm": "^4.22.0",
-		"phpunit/phpunit": "^9.5"
+		"nextcloud/ocp": "dev-stable23",
+		"phpunit/phpunit": "^9.5",
+		"vimeo/psalm": "^4.22.0"
 	},
 	"config": {
-		"optimize-autoloader": true,
 		"classmap-authoritative": true,
+		"optimize-autoloader": true,
 		"platform": {
 			"php": "7.3"
-		}
+		},
+		"sort-packages": true
 	},
 	"scripts": {
 		"lint": "find . -name \\*.php -not -path './vendor/*' -not -path './build/*' -print0 | xargs -0 -n1 php -l",
