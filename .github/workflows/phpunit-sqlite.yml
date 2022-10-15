@@ -28,6 +28,10 @@ on:
 permissions:
   contents: read
 
+concurrency: 
+  group: phpunit-sqlite-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 env:
   # Location of the phpunit.xml and phpunit.integration.xml files
   PHPUNIT_CONFIG: ./tests/phpunit.xml
@@ -39,18 +43,8 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: ["7.4", "8.0"]
-        server-versions: ["master", "stable25", "stable24", "stable23"]
-        include:
-          - php-versions: "7.3"
-            server-versions: "stable23"
-          - php-versions: "8.1"
-            server-versions: "stable24"
-          - php-versions: "8.1"
-            server-versions: "stable25"
-          - php-versions: "8.1"
-            server-versions: "master"
-
+        php-versions: ['8.0']
+        server-versions: ['master']
 
     steps:
       - name: Set app env
