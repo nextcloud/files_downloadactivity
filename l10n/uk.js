@@ -3,11 +3,11 @@ OC.L10N.register(
     {
     "Downloaded by {actor} (via desktop)" : "Завантажено {actor} (via desktop) ",
     "Downloaded by {actor} (via app)" : "Завантажено {actor} (via app) ",
-    "Downloaded by {actor} (via browser)" : "Завантажено {actor} (via browser) ",
+    "Downloaded by {actor} (via browser)" : "Завантажено {actor} (через бравзер)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Файл у спільному доступі {file} був завантажений {actor} через десктопний клієнт ",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Файл у спільному доступі {file} був завантажений {actor} через мобільний застосунок ",
-    "Shared file {file} was downloaded by {actor} via the browser" : "Файл у спільному доступі {file} був завантажений {actor} через браузер",
-    "A local shared file or folder was <strong>downloaded</strong>" : "Локальний файл у спільному доступі або каталог був  <strong>завантажений</strong>",
+    "Shared file {file} was downloaded by {actor} via the browser" : "Спільний файл {file} було завантажено {actor} через бравзер",
+    "A local shared file or folder was <strong>downloaded</strong>" : "Файл або каталог на пристрої, що у спільному доступі, було  <strong>завантажено</strong>",
     "Activities for shared file downloads" : "Дії для завантажених спільних файлів",
     "Creates activities for downloads of files that were shared with other users or a group" : "Створює дії для завантаження файлів, до яких було надано спільний доступ іншим користувачам або групі"
 },
