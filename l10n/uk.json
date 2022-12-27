@@ -1,5 +1,5 @@
 { "translations": {
-    "Downloaded by {actor} (via desktop)" : "Завантажено {actor} (via desktop) ",
+    "Downloaded by {actor} (via desktop)" : "Завантажено {actor} (на комп'ютер)",
     "Downloaded by {actor} (via app)" : "Завантажено {actor} (via app) ",
     "Downloaded by {actor} (via browser)" : "Завантажено {actor} (через бравзер)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Файл у спільному доступі {file} було завантажено {actor} через настільний клієнт ",
