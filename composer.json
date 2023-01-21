@@ -12,7 +12,7 @@
 		"nextcloud/coding-standard": "^1.0.0",
 		"nextcloud/ocp": "dev-stable24",
 		"phpunit/phpunit": "^9.5",
-		"vimeo/psalm": "^4.22.0"
+		"vimeo/psalm": "^5.4.0"
 	},
 	"config": {
 		"classmap-authoritative": true,
