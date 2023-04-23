@@ -1,13 +1,13 @@
 OC.L10N.register(
     "files_downloadactivity",
     {
-    "Downloaded by {actor} (via desktop)" : "Завантажено {actor} (на комп'ютер)",
-    "Downloaded by {actor} (via app)" : "Завантажено {actor} (via app) ",
-    "Downloaded by {actor} (via browser)" : "Завантажено {actor} (через бравзер)",
-    "Shared file {file} was downloaded by {actor} via the desktop client" : "Файл у спільному доступі {file} було завантажено {actor} через настільний клієнт ",
-    "Shared file {file} was downloaded by {actor} via the mobile app" : "Файл у спільному доступі {file} було завантажено {actor} через мобільний застосунок ",
-    "Shared file {file} was downloaded by {actor} via the browser" : "Спільний файл {file} було завантажено {actor} через бравзер",
-    "A local shared file or folder was <strong>downloaded</strong>" : "Файл або каталог на пристрої, що у спільному доступі, було  <strong>завантажено</strong>",
+    "Downloaded by {actor} (via desktop)" : "{actor} відкрив файл на комп'ютері",
+    "Downloaded by {actor} (via app)" : "{actor} відкрив(ла) файл у мобільному застосунку",
+    "Downloaded by {actor} (via browser)" : "{actor} відкрив(ла) файл у бравзері",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "Файл у спільному доступі {file} було звантажено {actor} через клієнт ПК",
+    "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} відкрив(ла) файл у спільному доступі {file} у мобільному застосунку",
+    "Shared file {file} was downloaded by {actor} via the browser" : "{actor} відкрив(ла) спільний файл {file} у бравзері",
+    "A local shared file or folder was <strong>downloaded</strong>" : "Файл або каталог на пристрої, що у спільному доступі, було  <strong>звантажено</strong>",
     "Activities for shared file downloads" : "Дії для завантажених спільних файлів",
     "Creates activities for downloads of files that were shared with other users or a group" : "Створює дії для завантаження файлів, до яких було надано спільний доступ іншим користувачам або групі"
 },
