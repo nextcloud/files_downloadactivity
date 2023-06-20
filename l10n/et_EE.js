@@ -7,6 +7,8 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the desktop client" : "Jagatud fail {file} laeti alla {actor} poolt töölauakliendi kaudu",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Jagatud fail {file} laeti alla {actor} poolt mobiilirakenduse kaudu",
     "Shared file {file} was downloaded by {actor} via the browser" : "Jagatud fail {file} laeti alla {actor} poolt brauseri kaudu",
-    "A local shared file or folder was <strong>downloaded</strong>" : "Kohalik jagatud fail või kaust <strong>laeti alla</strong>"
+    "A local shared file or folder was <strong>downloaded</strong>" : "Kohalik jagatud fail või kaust <strong>laeti alla</strong>",
+    "Activities for shared file downloads" : "Tegevused jagatud failide allalaadimiseks",
+    "Creates activities for downloads of files that were shared with other users or a group" : "Loob tegevused allalaadimiseks failidest, mis on jagatud teiste kasutajatega või grupiga"
 },
 "nplurals=2; plural=(n != 1);");
