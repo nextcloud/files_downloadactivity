@@ -51,7 +51,7 @@ class Setting implements ISetting {
 	 * @since 11.0.0
 	 */
 	public function getName(): string {
-		return $this->l->t('A local shared file or folder was <strong>downloaded</strong>');
+		return $this->l->t('A locally shared file or folder was <strong>downloaded</strong>');
 	}
 
 	/**
