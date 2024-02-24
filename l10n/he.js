@@ -11,4 +11,4 @@ OC.L10N.register(
     "Activities for shared file downloads" : "פעילויות להורדות קבצים משותפים",
     "Creates activities for downloads of files that were shared with other users or a group" : "יוצר פעילויות להורדת קבצים ששותפו עם משתמשים או קבוצות אחרים"
 },
-"nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;");
+"nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;");
