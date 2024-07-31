@@ -5,7 +5,7 @@
 	<name>Activities for shared file downloads</name>
 	<summary>Creates activities for downloads of files that were shared with other users or a group</summary>
 	<description>Creates activities for downloads of files that were shared with other users or a group</description>
-	<version>1.16.0</version>
+	<version>1.17.0</version>
 	<licence>agpl</licence>
 	<author>Joas Schilling</author>
 	<namespace>FilesDownloadActivity</namespace>
