@@ -28,10 +28,10 @@ use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
-use OCP\Files\File;
-use OCP\Util;
-use OCP\Preview\BeforePreviewFetchedEvent;
 use OCP\EventDispatcher\IEventDispatcher;
+use OCP\Files\File;
+use OCP\Preview\BeforePreviewFetchedEvent;
+use OCP\Util;
 
 class Application extends App implements IBootstrap {
 	public const APP_ID = 'files_downloadactivity';
@@ -46,9 +46,9 @@ class Application extends App implements IBootstrap {
 	public function boot(IBootContext $context): void {
 		Util::connectHook('OC_Filesystem', 'read', $this, 'listenReadFile');
 
-		$eventDispatcher = $this->getContainer()->query(IEventDispatcher::class);
+		$eventDispatcher = $this->getContainer()->get(IEventDispatcher::class);
 		$eventDispatcher->addListener(
-		    BeforePreviewFetchedEvent::class,
+			BeforePreviewFetchedEvent::class,
 			function (BeforePreviewFetchedEvent $event) {
 				$this->listenPreviewFile($event);
 			}
@@ -60,7 +60,7 @@ class Application extends App implements IBootstrap {
 	 */
 	public function listenReadFile(array $params): void {
 		/** @var Listener $hooks */
-		$hooks = $this->getContainer()->query(Listener::class);
+		$hooks = $this->getContainer()->get(Listener::class);
 		$hooks->readFile($params['path']);
 	}
 
@@ -88,7 +88,7 @@ class Application extends App implements IBootstrap {
 		}
 
 		/** @var Listener $hooks */
-		$hooks = $this->getContainer()->query(Listener::class);
+		$hooks = $this->getContainer()->get(Listener::class);
 		$hooks->readFile($path);
 	}
 }
