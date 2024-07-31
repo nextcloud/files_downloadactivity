@@ -55,18 +55,12 @@ class Application extends App implements IBootstrap {
 		);
 	}
 
-	/**
-	 * @param array $params
-	 */
 	public function listenReadFile(array $params): void {
 		/** @var Listener $hooks */
 		$hooks = $this->getContainer()->get(Listener::class);
 		$hooks->readFile($params['path']);
 	}
 
-	/**
-	 * @param GenericEvent $event
-	 */
 	public function listenPreviewFile(BeforePreviewFetchedEvent $event): void {
 		if ($event->getWidth() <= 250 && $event->getHeight() <= 250) {
 			// Ignore mini preview, but we need "big" previews because of the viewer app.
