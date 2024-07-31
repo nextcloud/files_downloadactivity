@@ -17,10 +17,10 @@
 	"config": {
 		"classmap-authoritative": true,
 		"optimize-autoloader": true,
+		"sort-packages": true,
 		"platform": {
-			"php": "7.4"
-		},
-		"sort-packages": true
+			"php": "8.1"
+		}
 	},
 	"scripts": {
 		"lint": "find . -name \\*.php -not -path './vendor/*' -not -path './build/*' -print0 | xargs -0 -n1 php -l",
