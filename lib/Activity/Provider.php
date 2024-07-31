@@ -85,7 +85,7 @@ class Provider implements IProvider {
 	 * @throws \InvalidArgumentException
 	 * @since 11.0.0
 	 */
-	public function parse($language, IEvent $event, IEvent $previousEvent = null): IEvent {
+	public function parse($language, IEvent $event, ?IEvent $previousEvent = null): IEvent {
 		if ($event->getApp() !== 'files_downloadactivity') {
 			throw new \InvalidArgumentException();
 		}
@@ -115,7 +115,7 @@ class Provider implements IProvider {
 	 * @throws \InvalidArgumentException
 	 * @since 11.0.0
 	 */
-	public function parseShortVersion(IEvent $event, IEvent $previousEvent = null): IEvent {
+	public function parseShortVersion(IEvent $event, ?IEvent $previousEvent = null): IEvent {
 		$parsedParameters = $this->getParsedParameters($event);
 		$params = $event->getSubjectParameters();
 
@@ -144,7 +144,7 @@ class Provider implements IProvider {
 	 * @throws \InvalidArgumentException
 	 * @since 11.0.0
 	 */
-	public function parseLongVersion(IEvent $event, IEvent $previousEvent = null): IEvent {
+	public function parseLongVersion(IEvent $event, ?IEvent $previousEvent = null): IEvent {
 		$parsedParameters = $this->getParsedParameters($event);
 		$params = $event->getSubjectParameters();
 

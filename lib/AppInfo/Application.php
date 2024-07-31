@@ -28,10 +28,10 @@ use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Files\File;
-use OCP\IPreview;
+use OCP\Preview\BeforePreviewFetchedEvent;
 use OCP\Util;
-use Symfony\Component\EventDispatcher\GenericEvent;
 
 class Application extends App implements IBootstrap {
 	public const APP_ID = 'files_downloadactivity';
@@ -46,36 +46,29 @@ class Application extends App implements IBootstrap {
 	public function boot(IBootContext $context): void {
 		Util::connectHook('OC_Filesystem', 'read', $this, 'listenReadFile');
 
-		$eventDispatcher = $context->getServerContainer()->getEventDispatcher();
+		$eventDispatcher = $this->getContainer()->get(IEventDispatcher::class);
 		$eventDispatcher->addListener(
-			IPreview::EVENT,
-			function (GenericEvent $event) {
+			BeforePreviewFetchedEvent::class,
+			function (BeforePreviewFetchedEvent $event) {
 				$this->listenPreviewFile($event);
 			}
 		);
 	}
 
-	/**
-	 * @param array $params
-	 */
 	public function listenReadFile(array $params): void {
 		/** @var Listener $hooks */
-		$hooks = $this->getContainer()->query(Listener::class);
+		$hooks = $this->getContainer()->get(Listener::class);
 		$hooks->readFile($params['path']);
 	}
 
-	/**
-	 * @param GenericEvent $event
-	 */
-	public function listenPreviewFile(GenericEvent $event): void {
-		$details = $event->getArguments();
-		if ($details['width'] <= 150 && $details['height'] <= 150) {
+	public function listenPreviewFile(BeforePreviewFetchedEvent $event): void {
+		if ($event->getWidth() <= 250 && $event->getHeight() <= 250) {
 			// Ignore mini preview, but we need "big" previews because of the viewer app.
 			return;
 		}
 
 		/** @var File $file */
-		$file = $event->getSubject();
+		$file = $event->getNode();
 
 		if (substr_count($file->getPath(), '/') < 3) {
 			// Invalid path
@@ -89,7 +82,7 @@ class Application extends App implements IBootstrap {
 		}
 
 		/** @var Listener $hooks */
-		$hooks = $this->getContainer()->query(Listener::class);
+		$hooks = $this->getContainer()->get(Listener::class);
 		$hooks->readFile($path);
 	}
 }
