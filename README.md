@@ -1,4 +1,10 @@
+<!--
+  - SPDX-FileCopyrightText: 2016 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 # Activities for shared file downloads
+
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud/files_downloadactivity)](https://api.reuse.software/info/github.com/nextcloud/files_downloadactivity)
 
 Creates activities for downloads of files that were shared with other users or a group
 
