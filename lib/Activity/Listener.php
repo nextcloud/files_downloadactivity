@@ -15,39 +15,19 @@ use OCP\Files\Folder;
 use OCP\Files\InvalidPathException;
 use OCP\Files\IRootFolder;
 use OCP\Files\NotFoundException;
-use OCP\ILogger;
 use OCP\IRequest;
 use OCP\IURLGenerator;
+use Psr\Log\LoggerInterface;
 
 class Listener {
-	/** @var IRequest */
-	protected $request;
-	/** @var IManager */
-	protected $activityManager;
-	/** @var IURLGenerator */
-	protected $urlGenerator;
-	/** @var IRootFolder */
-	protected $rootFolder;
-	/** @var CurrentUser */
-	protected $currentUser;
-	/** @var ILogger */
-	protected $logger;
-
-	/**
-	 * @param IRequest $request
-	 * @param IManager $activityManager
-	 * @param IURLGenerator $urlGenerator
-	 * @param IRootFolder $rootFolder
-	 * @param CurrentUser $currentUser
-	 * @param ILogger $logger
-	 */
-	public function __construct(IRequest $request, IManager $activityManager, IURLGenerator $urlGenerator, IRootFolder $rootFolder, CurrentUser $currentUser, ILogger $logger) {
-		$this->request = $request;
-		$this->activityManager = $activityManager;
-		$this->urlGenerator = $urlGenerator;
-		$this->rootFolder = $rootFolder;
-		$this->currentUser = $currentUser;
-		$this->logger = $logger;
+	public function __construct(
+		protected IRequest $request,
+		protected IManager $activityManager,
+		protected IURLGenerator $urlGenerator,
+		protected IRootFolder $rootFolder,
+		protected CurrentUser $currentUser,
+		protected LoggerInterface $logger
+	) {
 	}
 
 	/**
@@ -113,13 +93,9 @@ class Listener {
 				->setLink($this->urlGenerator->linkToRouteAbsolute('files.view.index', $linkData));
 			$this->activityManager->publish($event);
 		} catch (\InvalidArgumentException $e) {
-			$this->logger->logException($e, [
-				'app' => 'files_downloadactivity',
-			]);
+			$this->logger->error($e->getMessage(), $e->getTrace());
 		} catch (\BadMethodCallException $e) {
-			$this->logger->logException($e, [
-				'app' => 'files_downloadactivity',
-			]);
+			$this->logger->error($e->getMessage(), $e->getTrace());
 		}
 	}
 

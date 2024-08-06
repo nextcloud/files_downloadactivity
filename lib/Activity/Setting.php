@@ -8,19 +8,11 @@ declare(strict_types=1);
 
 namespace OCA\FilesDownloadActivity\Activity;
 
-use OCP\Activity\ISetting;
+use OCP\Activity\ActivitySettings;
 use OCP\IL10N;
 
-class Setting implements ISetting {
-
-	/** @var IL10N */
-	protected $l;
-
-	/**
-	 * @param IL10N $l
-	 */
-	public function __construct(IL10N $l) {
-		$this->l = $l;
+class Setting extends ActivitySettings {
+	public function __construct(protected IL10N $l) {
 	}
 
 	/**
@@ -37,6 +29,22 @@ class Setting implements ISetting {
 	 */
 	public function getName(): string {
 		return $this->l->t('A local shared file or folder was <strong>downloaded</strong>');
+	}
+
+	/**
+	 * @return string Lowercase a-z and underscore only group identifier
+	 * @since 20.0.0
+	 */
+	public function getGroupIdentifier() {
+		return 'sharing';
+	}
+
+	/**
+	 * @return string A translated string for the settings group
+	 * @since 20.0.0
+	 */
+	public function getGroupName() {
+		return $this->l->t('Sharing');
 	}
 
 	/**

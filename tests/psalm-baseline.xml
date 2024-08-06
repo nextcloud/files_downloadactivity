@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  - SPDX-FileCopyrightText: 2021 Nextcloud GmbH and Nextcloud contributors
-  - SPDX-License-Identifier: AGPL-3.0-or-later
--->
-<files psalm-version="4.30.0@d0bc6e25d89f649e4f36a534f330f8bb4643dd69">
+<files psalm-version="5.25.0@01a8eb06b9e9cc6cfb6a320bf9fb14331919d505">
   <file src="lib/Activity/Listener.php">
-    <MissingDependency occurrences="3">
-      <code>$this-&gt;rootFolder</code>
-      <code>IRootFolder</code>
-      <code>IRootFolder</code>
+    <MissingDependency>
+      <code><![CDATA[$this->rootFolder]]></code>
+      <code><![CDATA[protected]]></code>
     </MissingDependency>
-    <UndefinedClass occurrences="1">
-      <code>Filesystem</code>
+    <UndefinedClass>
+      <code><![CDATA[Filesystem]]></code>
     </UndefinedClass>
   </file>
   <file src="lib/CurrentUser.php">
-    <NoInterfaceProperties occurrences="1">
-      <code>$this-&gt;request-&gt;server</code>
+    <NoInterfaceProperties>
+      <code><![CDATA[$this->request->server]]></code>
     </NoInterfaceProperties>
   </file>
 </files>
