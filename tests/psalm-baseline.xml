@@ -1,7 +1,3 @@
-<!--
-  - SPDX-FileCopyrightText: 2021 Nextcloud GmbH and Nextcloud contributors
-  - SPDX-License-Identifier: AGPL-3.0-or-later
--->
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="5.25.0@01a8eb06b9e9cc6cfb6a320bf9fb14331919d505">
   <file src="lib/Activity/Listener.php">
