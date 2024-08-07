@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Le fichier partagé {file} a été téléchargé par {actor} via l'application mobile",
     "Shared file {file} was downloaded by {actor} via the browser" : "Le fichier partagé {file} a été téléchargé par {actor} via le navigateur",
     "A local shared file or folder was <strong>downloaded</strong>" : "Un fichier ou un dossier local partagé a été <strong>téléchargé</strong>",
+    "Sharing" : "Partage",
     "Activities for shared file downloads" : "Activité de téléchargement pour les fichiers partagés",
     "Creates activities for downloads of files that were shared with other users or a group" : "Crée des activités pour le téléchargement de fichiers partagés avec d'autres utilisateurs ou un groupe"
 },

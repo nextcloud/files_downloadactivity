@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Deild skrá {file} var sótt af {actor} með forritinu fyrir farsíma",
     "Shared file {file} was downloaded by {actor} via the browser" : "Deild skrá {file} var sótt af {actor} með vefviðmótinu",
     "A local shared file or folder was <strong>downloaded</strong>" : "Staðvær deiliskrá eða mappa var <strong>sótt</strong>",
+    "Sharing" : "Deiling",
     "Activities for shared file downloads" : "Virkni niðurhals á deildum skrám",
     "Creates activities for downloads of files that were shared with other users or a group" : "Útbýr virkni fyrir sóttar skrár sem deilt hefur verið með öðrum notendum eða hópum"
 },

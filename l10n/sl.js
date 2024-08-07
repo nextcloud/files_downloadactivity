@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} prejme dokument {file} v skupni rabi prek mobilne naprave.",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} prejme dokument {file} v skupni rabi prek spletnega brskalnika.",
     "A local shared file or folder was <strong>downloaded</strong>" : "<strong>Prejeta</strong> je bila krajevna datoteka ali mapa",
+    "Sharing" : "Souporaba",
     "Activities for shared file downloads" : "Dejavnost prejemov datotek v skupni rabi",
     "Creates activities for downloads of files that were shared with other users or a group" : "Ustvari dejavnosti za prejem datotek, ki so v souporabi z drugimi uporabniki ali skupinami."
 },

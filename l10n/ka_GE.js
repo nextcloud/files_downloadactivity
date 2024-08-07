@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "გაზიარებული ფაილი {file} მობილური აპლიკაციით გადმოწერა მომხმარებელმა {actor}",
     "Shared file {file} was downloaded by {actor} via the browser" : "გაზიარებული ფაილი {file} ბრაუზერთ გადმოწერა მომხმარებელმა {actor}",
     "A local shared file or folder was <strong>downloaded</strong>" : "ლოკალურად გაზიარებული ფაილი ან დირექტორია <strong>გადმოწერილ იქნა</strong>",
+    "Sharing" : "გაზიარება",
     "Activities for shared file downloads" : "გაზიარებული ფაილის გადმოწერის აქტივობები"
 },
 "nplurals=2; plural=(n!=1);");

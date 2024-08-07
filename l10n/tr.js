@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Paylaşılan {file} dosyası {actor} tarafından mobil uygulama ile indirildi",
     "Shared file {file} was downloaded by {actor} via the browser" : "Paylaşılan {file} dosyası {actor} tarafından tarayıcı ile indirildi",
     "A local shared file or folder was <strong>downloaded</strong>" : "Yerel olarak paylaşılmış bir dosya ya da klasör <strong>indirildi</strong>",
+    "Sharing" : "Paylaşım",
     "Activities for shared file downloads" : "Paylaşılmış dosya indirme işlemleri",
     "Creates activities for downloads of files that were shared with other users or a group" : "Diğer kullanıcı ve gruplar ile paylaşılmış dosyalar indirildiğinde ilgili işlem kayıtlarını oluşturur"
 },

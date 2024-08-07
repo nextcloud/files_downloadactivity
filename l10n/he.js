@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "הקובץ המשותף {file} נשלח אל {actor} לפי דרישה בעזרת היישומון לנייד",
     "Shared file {file} was downloaded by {actor} via the browser" : "הקובץ המשותף {file} נשלח אל {actor} לפי דרישה בעזרת הדפדפן",
     "A local shared file or folder was <strong>downloaded</strong>" : "קובץ או תיקייה ששותפו מקומית <strong>הורדו</strong>",
+    "Sharing" : "שיתוף",
     "Activities for shared file downloads" : "פעילויות להורדות קבצים משותפים",
     "Creates activities for downloads of files that were shared with other users or a group" : "יוצר פעילויות להורדת קבצים ששותפו עם משתמשים או קבוצות אחרים"
 },

@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} atsisiuntė bendrinamą failą {file} per mobiliąją programėlę",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} atsisiuntė bendrinamą failą {file} per naršyklę",
     "A local shared file or folder was <strong>downloaded</strong>" : "Buvo <strong>atsisiųstas</strong> vietinis bendrinamas failas ar aplankas",
+    "Sharing" : "Bendrinimas",
     "Activities for shared file downloads" : "Bendrinamų failų atsisiuntimo veiklos",
     "Creates activities for downloads of files that were shared with other users or a group" : "Sukuria failų, kurie buvo bendrinami su kitais naudotojais ar grupe, atsisiuntimo veiklas"
 },

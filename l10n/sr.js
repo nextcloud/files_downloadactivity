@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Дељени фајл {file} је преузео {actor} преко мобилне апликације",
     "Shared file {file} was downloaded by {actor} via the browser" : "Дељени фајл {file} је преузео {actor} преко веб читача",
     "A local shared file or folder was <strong>downloaded</strong>" : "Локална дељена фасцикла је <strong>преузета</strong>",
+    "Sharing" : "Дељење",
     "Activities for shared file downloads" : "Активности преузимања дељеног фајла",
     "Creates activities for downloads of files that were shared with other users or a group" : "Креира активности за скидање фајлова који су дељени са осталим корисницима или групом"
 },

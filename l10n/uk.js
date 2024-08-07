@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} звантажив(-ла) файл у спільному доступі {file} через мобільний застосунок",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} звантажив(-ла) файл у спільному доступі {file} через бравзер",
     "A local shared file or folder was <strong>downloaded</strong>" : "Файл або каталог на пристрої, що у спільному доступі, було  <strong>звантажено</strong>",
+    "Sharing" : "Спільне",
     "Activities for shared file downloads" : "Дії для звантажених спільних файлів",
     "Creates activities for downloads of files that were shared with other users or a group" : "Створює дії для звантаження файлів, до яких було надано спільний доступ іншим користувачам або певній групі"
 },

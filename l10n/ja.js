@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "{actor} が共有 {file} をモバイルアプリでダウンロードしました。",
     "Shared file {file} was downloaded by {actor} via the browser" : "{actor} が共有 {file} をブラウザーでダウンロードしました。",
     "A local shared file or folder was <strong>downloaded</strong>" : "ローカル共有フォルダーまたはファイルが<strong>ダウンロード</strong>されました",
+    "Sharing" : "共有",
     "Activities for shared file downloads" : "共有ファイルのダウンロード状況",
     "Creates activities for downloads of files that were shared with other users or a group" : "他のユーザーまたはグループと共有されたファイルのダウンロードのためのアクティビティを作成します。"
 },
