@@ -6,6 +6,7 @@
     "Shared file {file} was downloaded by {actor} via the mobile app" : "تم تنزيل الملف المشترك {file} بواسطة {actor} عبر تطبيق الهاتف",
     "Shared file {file} was downloaded by {actor} via the browser" : "تم تنزيل الملف المشترك {file} بواسطة {actor} عبر المتصفح",
     "A local shared file or folder was <strong>downloaded</strong>" : "تم <strong>تنزيل</strong> ملف أو مجلد محلي مشترك",
+    "Sharing" : "المشاركة",
     "Activities for shared file downloads" : "أنشطة تنزيل الملفات المشتركة",
     "Creates activities for downloads of files that were shared with other users or a group" : "أنشطة تنزيل الملفات التي تمت مشاركتها مع مستخدمين آخرين أو مجموعة"
 },"pluralForm" :"nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;"

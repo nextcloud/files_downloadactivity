@@ -8,6 +8,7 @@ OC.L10N.register(
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Sdílený soubor {file} si stáhl(a) {actor} prostřednictvím mobilní aplikace",
     "Shared file {file} was downloaded by {actor} via the browser" : "Sdílený soubor {file} si stáhl(a) {actor} prostřednictvím webového prohlížeče",
     "A local shared file or folder was <strong>downloaded</strong>" : "Lokálně sdílený soubor nebo složka byla <strong>stažena</strong>",
+    "Sharing" : "Sdílení",
     "Activities for shared file downloads" : "Aktivita stahování sdílených souborů",
     "Creates activities for downloads of files that were shared with other users or a group" : "Vytváří aktivity pro stažení souborů, které byly sdíleny s ostatními uživateli nebo skupinou"
 },
