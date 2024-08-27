@@ -6,6 +6,7 @@
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Shared file {file} was downloaded by {actor} via the mobile app",
     "Shared file {file} was downloaded by {actor} via the browser" : "Shared file {file} was downloaded by {actor} via the browser",
     "A local shared file or folder was <strong>downloaded</strong>" : "A local shared file or folder was <strong>downloaded</strong>",
+    "Sharing" : "Sharing",
     "Activities for shared file downloads" : "Activities for shared file downloads",
     "Creates activities for downloads of files that were shared with other users or a group" : "Creates activities for downloads of files that were shared with other users or a group"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"

@@ -4,6 +4,7 @@ OC.L10N.register(
     "Downloaded by {actor} (via desktop)" : "Descargado por {actor} (vía el cliente de escritorio)",
     "Shared file {file} was downloaded by {actor} via the desktop client" : "El archivo compartido {file} fue descargado por {actor} vía el cliente de escritorio",
     "A local shared file or folder was <strong>downloaded</strong>" : "Un archivo o carpeta local compartido fue <strong>descargado</strong>",
+    "Sharing" : "Compartiendo",
     "Activities for shared file downloads" : "Actividades para los archivos compartidos descargados"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
