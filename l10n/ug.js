@@ -1,12 +1,12 @@
 OC.L10N.register(
     "files_downloadactivity",
     {
-    "Downloaded by {actor} (via desktop)" : "{ئارتىس} تەرىپىدىن چۈشۈرۈلدى (ئۈستەل يۈزى ئارقىلىق)",
-    "Downloaded by {actor} (via app)" : "{ئارتىس تەرىپىدىن چۈشۈرۈلگەن (ئەپ ئارقىلىق)",
-    "Downloaded by {actor} (via browser)" : "{ئارتىس} تەرىپىدىن چۈشۈرۈلدى (توركۆرگۈچ ئارقىلىق)",
-    "Shared file {file} was downloaded by {actor} via the desktop client" : "ئورتاق ھۆججەت {ھۆججەت} ئۈستەل يۈزى خېرىدارى ئارقىلىق {ئارتىس by تەرىپىدىن چۈشۈرۈلدى",
-    "Shared file {file} was downloaded by {actor} via the mobile app" : "ئورتاق ھۆججەت {ھۆججەت} كۆچمە ئەپ ئارقىلىق {ئارتىس} تەرىپىدىن چۈشۈرۈلدى",
-    "Shared file {file} was downloaded by {actor} via the browser" : "ئورتاق ھۆججەت {ھۆججەت} توركۆرگۈ ئارقىلىق {ئارتىس} تەرىپىدىن چۈشۈرۈلدى",
+    "Downloaded by {actor} (via desktop)" : "{actor} تەرىپىدىن چۈشۈرۈلدى (ئۈستەل يۈزى ئارقىلىق)",
+    "Downloaded by {actor} (via app)" : "{actor} تەرىپىدىن چۈشۈرۈلگەن (ئەپ ئارقىلىق)",
+    "Downloaded by {actor} (via browser)" : "{actor} تەرىپىدىن چۈشۈرۈلدى (توركۆرگۈچ ئارقىلىق)",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "ئورتاق ھۆججەت {file} ئۈستەل يۈزى خېرىدارى ئارقىلىق {actor} by تەرىپىدىن چۈشۈرۈلدى",
+    "Shared file {file} was downloaded by {actor} via the mobile app" : "ئورتاق ھۆججەت {file} كۆچمە ئەپ ئارقىلىق {actor} تەرىپىدىن چۈشۈرۈلدى",
+    "Shared file {file} was downloaded by {actor} via the browser" : "ئورتاق ھۆججەت {file} توركۆرگۈ ئارقىلىق {actor} تەرىپىدىن چۈشۈرۈلدى",
     "A local shared file or folder was <strong>downloaded</strong>" : "يەرلىك ئورتاق ھۆججەت ياكى ھۆججەت قىسقۇچ <strong> چۈشۈرۈلدى </ strong>",
     "Sharing" : "ھەمبەھىر",
     "Activities for shared file downloads" : "ئورتاق ھۆججەت چۈشۈرۈش پائالىيىتى",
