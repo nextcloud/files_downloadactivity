@@ -164,7 +164,7 @@ class Provider implements IProvider {
 			case self::SUBJECT_SHARED_FILE_DOWNLOADED:
 				$id = key($parameters[0]);
 				return [
-					'file' => $this->generateFileParameter((int) $id, $parameters[0][$id]),
+					'file' => $this->generateFileParameter((int)$id, $parameters[0][$id]),
 					'actor' => $this->generateUserParameter($parameters[1]),
 				];
 		}
