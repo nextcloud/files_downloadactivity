@@ -16,7 +16,7 @@ use OCP\Share\IManager;
 use OCP\Share\IShare;
 
 class CurrentUser {
-	protected ?string $identifier;
+	protected ?string $identifier = null;
 	/** @var string|false|null */
 	protected $sessionUser;
 
