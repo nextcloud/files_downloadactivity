@@ -12,7 +12,9 @@ use OCP\Activity\ActivitySettings;
 use OCP\IL10N;
 
 class Setting extends ActivitySettings {
-	public function __construct(protected IL10N $l) {
+	public function __construct(
+		protected IL10N $l,
+	) {
 	}
 
 	/**
@@ -49,8 +51,8 @@ class Setting extends ActivitySettings {
 
 	/**
 	 * @return int whether the filter should be rather on the top or bottom of
-	 * the admin section. The filters are arranged in ascending order of the
-	 * priority values. It is required to return a value between 0 and 100.
+	 *             the admin section. The filters are arranged in ascending order of the
+	 *             priority values. It is required to return a value between 0 and 100.
 	 * @since 11.0.0
 	 */
 	public function getPriority(): int {

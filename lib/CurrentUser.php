@@ -16,16 +16,7 @@ use OCP\Share\IManager;
 use OCP\Share\IShare;
 
 class CurrentUser {
-
-	/** @var IUserSession */
-	protected $userSession;
-	/** @var IRequest */
-	protected $request;
-	/** @var IManager */
-	protected $shareManager;
-
-	/** @var string */
-	protected $identifier;
+	protected ?string $identifier;
 	/** @var string|false|null */
 	protected $sessionUser;
 
@@ -34,10 +25,11 @@ class CurrentUser {
 	 * @param IRequest $request
 	 * @param IManager $shareManager
 	 */
-	public function __construct(IUserSession $userSession, IRequest $request, IManager $shareManager) {
-		$this->userSession = $userSession;
-		$this->request = $request;
-		$this->shareManager = $shareManager;
+	public function __construct(
+		protected IUserSession $userSession,
+		protected IRequest $request,
+		protected IManager $shareManager,
+	) {
 		$this->sessionUser = false;
 	}
 
@@ -70,7 +62,7 @@ class CurrentUser {
 		if ($this->sessionUser === false) {
 			$user = $this->userSession->getUser();
 			if ($user instanceof IUser) {
-				$this->sessionUser = (string) $user->getUID();
+				$this->sessionUser = $user->getUID();
 			} else {
 				$this->sessionUser = null;
 			}

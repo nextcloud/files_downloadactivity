@@ -26,7 +26,7 @@ class Listener {
 		protected IURLGenerator $urlGenerator,
 		protected IRootFolder $rootFolder,
 		protected CurrentUser $currentUser,
-		protected LoggerInterface $logger
+		protected LoggerInterface $logger,
 	) {
 	}
 

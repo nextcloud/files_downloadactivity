@@ -5,6 +5,7 @@
 -->
 <psalm
     errorLevel="4"
+    phpVersion="8.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
@@ -25,17 +26,8 @@
 	<issueHandlers>
 		<UndefinedClass>
 			<errorLevel type="suppress">
-				<referencedClass name="Doctrine\DBAL\Types\Types" />
 				<referencedClass name="OC" />
 			</errorLevel>
 		</UndefinedClass>
-		<UndefinedDocblockClass>
-			<errorLevel type="suppress">
-				<referencedClass name="Doctrine\DBAL\Schema\Schema" />
-				<referencedClass name="Doctrine\DBAL\Schema\SchemaException" />
-				<referencedClass name="Doctrine\DBAL\Driver\Statement" />
-				<referencedClass name="Doctrine\DBAL\Schema\Table" />
-			</errorLevel>
-		</UndefinedDocblockClass>
 	</issueHandlers>
 </psalm>

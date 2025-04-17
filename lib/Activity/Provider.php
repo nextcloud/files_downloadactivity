@@ -19,24 +19,8 @@ use OCP\IUserManager;
 use OCP\L10N\IFactory;
 
 class Provider implements IProvider {
-
-	/** @var IFactory */
-	protected $languageFactory;
-
 	/** @var IL10N */
 	protected $l;
-
-	/** @var IURLGenerator */
-	protected $url;
-
-	/** @var IManager */
-	protected $activityManager;
-
-	/** @var IUserManager */
-	protected $userManager;
-
-	/** @var IEventMerger */
-	protected $eventMerger;
 
 	/** @var array */
 	protected $displayNames = [];
@@ -47,19 +31,13 @@ class Provider implements IProvider {
 	public const SUBJECT_SHARED_FILE_DOWNLOADED = 'shared_file_downloaded';
 	public const SUBJECT_SHARED_FOLDER_DOWNLOADED = 'shared_folder_downloaded';
 
-	/**
-	 * @param IFactory $languageFactory
-	 * @param IURLGenerator $url
-	 * @param IManager $activityManager
-	 * @param IUserManager $userManager
-	 * @param IEventMerger $eventMerger
-	 */
-	public function __construct(IFactory $languageFactory, IURLGenerator $url, IManager $activityManager, IUserManager $userManager, IEventMerger $eventMerger) {
-		$this->languageFactory = $languageFactory;
-		$this->url = $url;
-		$this->activityManager = $activityManager;
-		$this->userManager = $userManager;
-		$this->eventMerger = $eventMerger;
+	public function __construct(
+		protected IFactory $languageFactory,
+		protected IURLGenerator $url,
+		protected IManager $activityManager,
+		protected IUserManager $userManager,
+		protected IEventMerger $eventMerger,
+	) {
 	}
 
 	/**
@@ -186,7 +164,7 @@ class Provider implements IProvider {
 			case self::SUBJECT_SHARED_FILE_DOWNLOADED:
 				$id = key($parameters[0]);
 				return [
-					'file' => $this->generateFileParameter((int) $id, $parameters[0][$id]),
+					'file' => $this->generateFileParameter((int)$id, $parameters[0][$id]),
 					'actor' => $this->generateUserParameter($parameters[1]),
 				];
 		}

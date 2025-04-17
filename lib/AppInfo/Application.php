@@ -16,6 +16,7 @@ use OCP\AppFramework\Bootstrap\IRegistrationContext;
 use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Files\File;
 use OCP\Preview\BeforePreviewFetchedEvent;
+use OCP\Server;
 use OCP\Util;
 
 class Application extends App implements IBootstrap {
@@ -31,7 +32,7 @@ class Application extends App implements IBootstrap {
 	public function boot(IBootContext $context): void {
 		Util::connectHook('OC_Filesystem', 'read', $this, 'listenReadFile');
 
-		$eventDispatcher = $this->getContainer()->get(IEventDispatcher::class);
+		$eventDispatcher = Server::get(IEventDispatcher::class);
 		$eventDispatcher->addListener(
 			BeforePreviewFetchedEvent::class,
 			function (BeforePreviewFetchedEvent $event) {
@@ -41,8 +42,7 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function listenReadFile(array $params): void {
-		/** @var Listener $hooks */
-		$hooks = $this->getContainer()->get(Listener::class);
+		$hooks = Server::get(Listener::class);
 		$hooks->readFile($params['path']);
 	}
 
@@ -66,8 +66,7 @@ class Application extends App implements IBootstrap {
 			return;
 		}
 
-		/** @var Listener $hooks */
-		$hooks = $this->getContainer()->get(Listener::class);
+		$hooks = Server::get(Listener::class);
 		$hooks->readFile($path);
 	}
 }
