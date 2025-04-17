@@ -28,7 +28,7 @@
 	<screenshot>https://raw.githubusercontent.com/nextcloud/files_downloadactivity/master/docs/screenshot.png</screenshot>
 
 	<dependencies>
-		<nextcloud min-version="28" max-version="30" />
+		<nextcloud min-version="30" max-version="31" />
 	</dependencies>
 
 	<activity>

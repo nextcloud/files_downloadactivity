@@ -9,10 +9,10 @@
 	"description": "Creates activities for downloads of files that were shared with other users or a group",
 	"license": "AGPL",
 	"require-dev": {
-		"nextcloud/coding-standard": "^1.0.0",
-		"nextcloud/ocp": "dev-master",
-		"phpunit/phpunit": "^9.5",
-		"vimeo/psalm": "^5.4.0"
+		"nextcloud/coding-standard": "^v1.3.2",
+		"nextcloud/ocp": "dev-stable30",
+		"phpunit/phpunit": "^9.6.22",
+		"vimeo/psalm": "^5.26.1"
 	},
 	"config": {
 		"classmap-authoritative": true,
@@ -26,10 +26,8 @@
 		"lint": "find . -name \\*.php -not -path './vendor/*' -not -path './build/*' -print0 | xargs -0 -n1 php -l",
 		"cs:check": "php-cs-fixer fix --dry-run --diff",
 		"cs:fix": "php-cs-fixer fix",
-		"psalm": "psalm --threads=1",
+		"psalm": "psalm --no-cache --threads=$(nproc)",
 		"psalm:update-baseline": "psalm --threads=1 --update-baseline --set-baseline=tests/psalm-baseline.xml",
-		"psalm:clear": "psalm --clear-cache && psalm --clear-global-cache",
-		"psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MissingParamType,InvalidFalsableReturnType",
 		"test:unit": "vendor/bin/phpunit --color -c tests/phpunit.xml"
 	}
 }
