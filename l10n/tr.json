@@ -1,8 +1,8 @@
 { "translations": {
-    "Downloaded by {actor} (via desktop)" : "{actor} tarafından indirildi (masaüstü ile)",
+    "Downloaded by {actor} (via desktop)" : "{actor} tarafından indirildi (bilgisayar ile)",
     "Downloaded by {actor} (via app)" : "{actor} tarafından indirildi (uygulama ile)",
     "Downloaded by {actor} (via browser)" : "{actor} tarafından indirildi (tarayıcı ile)",
-    "Shared file {file} was downloaded by {actor} via the desktop client" : "Paylaşılan {file} dosyası {actor} tarafından masaüstü istemcisi ile indirildi",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "Paylaşılan {file} dosyası {actor} tarafından bilgisayar istemcisi ile indirildi",
     "Shared file {file} was downloaded by {actor} via the mobile app" : "Paylaşılan {file} dosyası {actor} tarafından mobil uygulama ile indirildi",
     "Shared file {file} was downloaded by {actor} via the browser" : "Paylaşılan {file} dosyası {actor} tarafından tarayıcı ile indirildi",
     "A local shared file or folder was <strong>downloaded</strong>" : "Yerel olarak paylaşılmış bir dosya ya da klasör <strong>indirildi</strong>",
