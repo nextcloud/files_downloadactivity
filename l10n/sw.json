@@ -1,4 +1,13 @@
 { "translations": {
-    "Sharing" : "inashirikisha"
+    "Downloaded by {actor} (via desktop)" : "Imepakuliwa na {actor}(kupitia desktop)",
+    "Downloaded by {actor} (via app)" : "Imepakuliwa na {actor} (kupitia programu)",
+    "Downloaded by {actor} (via browser)" : "Imepakuliwa na {actor} (kupitia kivinjari)",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "Faili iliyoshirikishwa {file}ilipakuliwa na {actor}kupitia mteja wa desktop",
+    "Shared file {file} was downloaded by {actor} via the mobile app" : "Faili iliyoshirikishwa {file} ilipakuliwa na {actor} kupitia programu ya simu ya mkononi",
+    "Shared file {file} was downloaded by {actor} via the browser" : "Faili iliyoshirikishwa {file}ilipakuliwa na {actor} kupitia kivinjari",
+    "A local shared file or folder was <strong>downloaded</strong>" : " Faili ya ndani iliyoshirikishwa au folda <strong>ilipakuliwa</strong>",
+    "Sharing" : "inashirikisha",
+    "Activities for shared file downloads" : "Shughuli za upakuaji wa faili zilizoshirikiwa",
+    "Creates activities for downloads of files that were shared with other users or a group" : "Inaunda shughuli za upakuaji wa faili ambazo zilishirikiwa na watumiaji wengine au kikundi"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
