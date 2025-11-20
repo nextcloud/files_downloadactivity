@@ -1,6 +1,15 @@
 OC.L10N.register(
     "files_downloadactivity",
     {
-    "Sharing" : "ການແບ່ງປັນ"
+    "Downloaded by {actor} (via desktop)" : "Downloaded by {actor} (via desktop)",
+    "Downloaded by {actor} (via app)" : "Downloaded by {actor} (via app)",
+    "Downloaded by {actor} (via browser)" : "Downloaded by {actor} (via browser)",
+    "Shared file {file} was downloaded by {actor} via the desktop client" : "Shared file {file} was downloaded by {actor} via the desktop client",
+    "Shared file {file} was downloaded by {actor} via the mobile app" : "Shared file {file} was downloaded by {actor} via the mobile app",
+    "Shared file {file} was downloaded by {actor} via the browser" : "Shared file {file} was downloaded by {actor} via the browser",
+    "A local shared file or folder was <strong>downloaded</strong>" : "A local shared file or folder was <strong>downloaded</strong>",
+    "Sharing" : "ການແບ່ງປັນ",
+    "Activities for shared file downloads" : "Activities for shared file downloads",
+    "Creates activities for downloads of files that were shared with other users or a group" : "Creates activities for downloads of files that were shared with other users or a group"
 },
 "nplurals=1; plural=0;");
